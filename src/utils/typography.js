@@ -1,17 +1,27 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
+const mytheme = {
+  title: "My Theme",
+  baseFontSize: "15px",
+  baseLineHeight: 1.6,
+  scaleRatioOLD: 1.7333,
+  scaleRatio: 2,
+  headerFontFamily: ["Libre Baskerville", "Georgia", "serif"],
+  bodyFontFamily: ["Libre Baskerville", "Georgia", "serif"],
+  headerColor: "hsla(0,0%,0%,0.87)",
+  bodyColor: "hsla(0,0%,0%,0.78)",
+  headerWeight: 400,
+  bodyWeight: 400,
+  boldWeight: "bold",
+  googleFonts: [
+    {
+      name: "Libre Baskerville",
+      styles: ["400", "700"],
     },
-  }
+  ],
 }
 
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(mytheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
