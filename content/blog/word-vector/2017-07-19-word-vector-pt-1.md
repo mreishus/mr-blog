@@ -29,7 +29,7 @@ that some intuitive concepts might be embedded in simple linear transformations.
 to `king` gets you `queen`.  This is simplifying a bit, the `male->female` vector is not as clean as my example,
 but it's still a very neat result.  Here's a graphic from google showing some linear relationships:
 
-<img data-src="/img/wordvec-linear-relationships.png" width="100%" class="lazyload">
+![Wordvec linear relationships](./wordvec-linear-relationships.png)
 
 I've explored this feature some.  I've found it to be impressive but a bit messy and not as clean as the diagrams.
 I haven't found any practical use for it. (Analogy completer?)

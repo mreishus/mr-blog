@@ -17,7 +17,7 @@ might not work in a 300d space (see: [1](http://citeseerx.ist.psu.edu/viewdoc/do
 
 Instead, we can use [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity), which will tell us if vectors are roughly pointing in the same direction or not:
 
-<img data-src="/img/cosine_sim_white.png" width="100%" class="lazyload">
+![Cosine similarity](./cosine_sim.png)
 
 # Calculating cosine similarity (theory)
 
@@ -116,7 +116,7 @@ With these functions and the model, we have the guts of our API ready.  I used [
 an input word and lists similar words.  One important detail is I told babel not to transform my 75 megabyte model
 file.  Here it is in action (w/ hard to read json):
 
-<img data-src="/img/api_example.png" width="100%" class="lazyload">
+![API Example](./api_example.png)
 
 [Gist of above](https://gist.github.com/mreishus/bfbb0a532f9ecdce536d80eb3e8897c1).
 

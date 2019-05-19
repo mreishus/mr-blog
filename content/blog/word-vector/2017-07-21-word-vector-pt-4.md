@@ -9,7 +9,7 @@ In part 4, we'll be using the service we made in part 3 in our web app.
 
 <!--more-->
 
-Previous: [Part 3]({{< relref "2017-07-21-word-vector-pt-3.md" >}})
+Previous: [Part 3](/word-vector/2017-07-21-word-vector-pt-3)
 
 # Adding the service to search
 
@@ -34,12 +34,11 @@ example made for this blog series.
 Unfortunately, I can't host a demo of the app here since this is hosted by github pages.  However, I've taken a few
 screenshots of the related search in action:
 
+![Search 1](./search-1.png)
 
-<img data-src="/img/search-1.png" width="100%" class="lazyload">
+![Search 2](./search-2.png)
 
-<img data-src="/img/search-2.png" width="100%" class="lazyload">
-
-<img data-src="/img/search-3.png" width="100%" class="lazyload">
+![Search 3](./search-3.png)
 
 # Conclusion
 
@@ -52,4 +51,4 @@ fledged project, just a tech demo.
 
 This ends the series, hope you found it interesting.
 
-Previous: [Part 3]({{< relref "2017-07-21-word-vector-pt-3.md" >}})
+Previous: [Part 3](/word-vector/2017-07-21-word-vector-pt-3)

@@ -9,8 +9,8 @@ In part 2, we'll be downloading the model and trimming it to a reasonable size.
 
 <!--more-->
 
-Previous: [Part 1]({{< relref "2017-07-19-word-vector-pt-1.md" >}}) <br />
-Next: [Part 3]({{< relref "2017-07-21-word-vector-pt-3.md" >}})
+Previous: [Part 1](/word-vector/2017-07-19-word-vector-pt-1) <br />
+Next: [Part 3](/word-vector/2017-07-21-word-vector-pt-3)
 
 # Downloading the model
 
@@ -98,11 +98,11 @@ Use it like so: `$ ./make_model.rb 25000 > ../words25k.js`
 A 25k word model is about 75 megabytes, and includes a reasonable number of words.  Here's a graph showing
 estimated vocabulary size for English native speakers from [testyourvocab.com](http://testyourvocab.com/):
 
-<img data-src="/img/vocab1.jpg" width="100%" class="lazyload">
+![Vocab graph](./vocab1.jpg)
 
 # Up next
 
 In part 3, we'll be using some basic linear algebra to find related words.
 
-Previous: [Part 1]({{< relref "2017-07-19-word-vector-pt-1.md" >}}) <br />
-Next: [Part 3]({{< relref "2017-07-21-word-vector-pt-3.md" >}})
+Previous: [Part 1](/word-vector/2017-07-19-word-vector-pt-1) <br />
+Next: [Part 3](/word-vector/2017-07-21-word-vector-pt-3)
