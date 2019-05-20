@@ -1,6 +1,7 @@
 ---
 title: "Word Vector Series - All Posts"
 date: 2017-07-21T17:32:35-05:00
+templateKey: blog-post
 ---
 
 This series covers using a well-known pretrained word vector model to 

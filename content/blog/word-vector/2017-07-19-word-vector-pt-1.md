@@ -1,6 +1,7 @@
 ---
 title: "Word Vector Series: Part 1 - Intro"
 date: 2017-07-19T19:08:23-05:00
+templateKey: blog-post
 ---
 
 # Intro to Part 1

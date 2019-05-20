@@ -1,6 +1,7 @@
 ---
 title: "Word Vector Series: Part 3 - Creating a similar word service"
 date: 2017-07-21T13:55:51-05:00
+templateKey: blog-post
 ---
 
 # Intro to Part 3

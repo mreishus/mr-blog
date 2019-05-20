@@ -1,6 +1,7 @@
 ---
 title: "Word Vector Series: Part 4 - Tying it all together"
 date: 2017-07-21T17:08:10-05:00
+templateKey: blog-post
 ---
 
 # Intro to Part 4

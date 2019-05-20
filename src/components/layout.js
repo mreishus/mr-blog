@@ -2,6 +2,22 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import "./layout.css"
+
+const TopNav = () => {
+  return (
+    <nav>
+      <ol>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ol>
+    </nav>
+  )
+}
 
 class Layout extends React.Component {
   render() {
@@ -60,12 +76,14 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header>
+          <TopNav />
+          {header}
+        </header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}
+          {/*, Built with {` `} <a href="https://www.gatsbyjs.org">Gatsby</a> */}
         </footer>
       </div>
     )
