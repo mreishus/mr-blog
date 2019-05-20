@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `MatthewReishus.com`,
+    author: `Matthew Reishus`,
+    description: `Personal blog site.`,
+    siteUrl: `https://matthewreishus.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
   },
   plugins: [
@@ -74,6 +74,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    'gatsby-plugin-catch-links',
+    "gatsby-plugin-catch-links",
   ],
 }
