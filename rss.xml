@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 20 May 2019 03:26:12 GMT</lastBuildDate><item><title><![CDATA[About Matthew Reishus]]></title><description><![CDATA[Lead web application developer with over 10 years of professional experience. Adept in front-end, back-end, and devops tracks.  Specialties…]]></description><link>https://matthewreishus.com//about/</link><guid isPermaLink="false">https://matthewreishus.com//about/</guid><pubDate>Wed, 15 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Lead web application developer with over 10 years of professional experience. Adept in front-end, back-end, and devops tracks.  Specialties are development process improvement, debugging complex problems, and creating tools to aid business and development needs. Skilled in design, implementation, deployment, and maintenance of software. &lt;/p&gt;
+&lt;h1&gt;Front End&lt;/h1&gt;
+&lt;p&gt;Professional experience using React, Redux, Webpack, ES6, Babel, Jest, Router v4 to create a modern javascript application with code splitting and other niceties.&lt;/p&gt;
+&lt;h1&gt;Back End&lt;/h1&gt;
+&lt;p&gt;Experienced with Ruby (and Rails), Elixir (and Phoenix), C#, F#, PHP, Node and other languages.  SQL Server, Percona, Postgres, Elastic Search, Redis. Nginx, IIS, HAProxy.&lt;/p&gt;
+&lt;h1&gt;DevOps / Process Improvement&lt;/h1&gt;
+&lt;p&gt;Continuous Deployment, Automated Testing, Trunk Based Development, Feature Gating, Configuration Management (Puppet + Chef), High Availablility (Percona Cluster), ELK stack.&lt;/p&gt;
+&lt;h1&gt;Other&lt;/h1&gt;
+&lt;p&gt;Refactoring a revenue-generating application in maintenance trouble without rewriting it.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Word Vector Series - All Posts]]></title><description><![CDATA[This series covers using a well-known pretrained word vector model to 
+enhance client side searching in a react app.Part 1 - IntroPart…]]></description><link>https://matthewreishus.com//word-vector/2017-07-21-word-vector-all-posts/</link><guid isPermaLink="false">https://matthewreishus.com//word-vector/2017-07-21-word-vector-all-posts/</guid><pubDate>Fri, 21 Jul 2017 22:32:35 GMT</pubDate><content:encoded>&lt;p&gt;This series covers using a well-known pretrained word vector model to
+enhance client side searching in a react app.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/word-vector/2017-07-19-word-vector-pt-1&quot;&gt;Part 1 - Intro&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-2&quot;&gt;Part 2 - Downloading the model&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-3&quot;&gt;Part 3 - Creating a similar word service&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-4.md&quot;&gt;Part 4 - Tying it all together&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;</content:encoded></item><item><title><![CDATA[Word Vector Series: Part 4 - Tying it all together]]></title><description><![CDATA[Intro to Part 4In part 4, we’ll be using the service we made in part 3 in our web app.Previous: Part 3Adding the service to searchThere isn…]]></description><link>https://matthewreishus.com//word-vector/2017-07-21-word-vector-pt-4/</link><guid isPermaLink="false">https://matthewreishus.com//word-vector/2017-07-21-word-vector-pt-4/</guid><pubDate>Fri, 21 Jul 2017 22:08:10 GMT</pubDate><content:encoded>&lt;h1&gt;Intro to Part 4&lt;/h1&gt;
+&lt;p&gt;In part 4, we’ll be using the service we made in part 3 in our web app.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Previous: &lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-3&quot;&gt;Part 3&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Adding the service to search&lt;/h1&gt;
+&lt;p&gt;There isn’t much to do here but look up similar words on the user’s search.  Our simple psuedo code is something like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Take the user’s search and split it up into words&lt;/li&gt;
+&lt;li&gt;For each word, look up similar words&lt;/li&gt;
+&lt;li&gt;Add the similar words to the user’s search&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The focus on this series is on using the model, not building react apps - so I won’t explain in detail how I added it
+it to the app, but it’s pretty straightforward.&lt;/p&gt;
+&lt;p&gt;Here is the code - note that the api address is hardcoded.  The app code is on the rough side since it’s just an
+example made for this blog series. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mreishus/vector-search-example&quot;&gt;Github repo with both front-end and service&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mreishus/vector-search-example/blob/master/front-end/src/components/SearchPage.js#L59&quot;&gt;Relevant file doing the work of calling the service&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Screenshots&lt;/h1&gt;
+&lt;p&gt;Unfortunately, I can’t host a demo of the app here since this is hosted by github pages.  However, I’ve taken a few
+screenshots of the related search in action:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9c734e667ddbace33010effe884b2985/c5f2c/search-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 144.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFCElEQVRIx52VWU8bVxTH/ZaoD+1T0yxSk0aqVKnb56iUl6p9qqomtEqztKEEAiYJJGADNsYGDDbGmKTBGBsYvATbYBsIwXjfPd5tyNI0qVqaLp/g3zPjNA8Nnoc+/HTm3pk599xz/+dc0Wh5A8PFdWgfBjBauYfJn6O4tZfC9G/J/4VIEbKj5c4IxMwkOq16TFS2YPm7CNNzFqY/crD8WcA8T1GQBYL7ViQuu9BZcUNcdpNdATfuKDrRUSJbcuIcy+Cb7AKa0hY0pcxk98OC0/TuIrsE0SFLK+pcfkF9/CY9vzXfiubtWSjjLowVKC3lTWhK915hvLiB6eo2mvy3ITqycAX7cXi+DccW29F9z4xpvwtMMQRHNV5nJwFHLf4SWzUG78Ms2qILjR3+y+uTZ/HaxNc4qDmDA+qvcIB7nj6Lg4azdfuCA8Qbc80QHba04dAcbXWuBYfMtE1+2y0vU3B4nqO1vgBFzHGUOMZ0vMJR+kZ0xHQZJ0xX8I65HScZMY5bb+C4rRcnrF1ENz1LaK4HJ62dOL4oxgmmE28vdvApOfJfOIcf2G+iP+OCJHYXkoQblsJFMNnPMJWTw5CVwpY9BUv2DAbYNaifRDD5NIofUgwf/X4pEn3k6MEoCXs46wNTlWJt50s4q83wVr6AsXYLhpwBpvIIbJVOjJd8pM88rpdX+PQ0dChPujAQcUAVm8VQzAJ5zI6h0G2yy+gJrkAWX4Eq+iP6wzZMVP1oSy7xkmrocLiwBlXWA1VhE8rcBlR5iri4BRXrwzC7Wn+X38RQxgNdzY+OrIPX6v4O7/ZAkXZjMOGCIuWGgqIdTDgxlF7hLTc/GHdCHl+GjPKsrdxHe8Yu7FBOPw6EHYQd/UEbDzfupzrvCyxBul1HQqjo4NoFI6QtKzKUJ8pXX4gcURRcZANRshQxtxiHjCLsowXVuTWIC87Gh/IxOdTtBqDfDfKdZvpJDMbnOczssTDuZTFLXWf29yzPzF4GC3+V0F0SOOV3mWv4NmLC+ZgZF+LzOB+dw/eJGVxKGmk8h3MRIlq33HffkQo+3dBSRTXY8vu2G5Cmnegnbsaoq+QNWMp9Djv7CfRlDdTP0tA8C2H8WQRjT8PQ/5pAS8YqpMNeEvYGRnNeksg6dKVlrNVI3JULGKtsQ1MLYrxMbap6H6MkL31tG+1pu7AOuYOQbC2gN+CAMkSVEWmCJqrEcHwWgyEjJH6G3i+ix79E1bKJzvyycKUoWQ9p8IXuUj70pNJQZZxYyl/CrYIGA4l1KNMuwg4jHc7VklvYoSrPVYSXqmQdatYKc0UGXd4IBeuHIruJqeIM7u+eAlPuwO1f0hDn7jZuDh+SQxlFJt1mIA05oKCT1Ie7oI5PQRIgkUeWMRLWQhcUU52b6CrYpEqxCQt7JOeDKkkNIOmGKuXFYJLqNumju8TJz008iEL7II3Jx1HMPE2gS0iH71EjvVZwobu8iq6im6BnuvE4ey3n5OmmnHFz12mut+LF6eCdxjrkHLYEzbgcIMheoYumhW661tA8btAiNysesh6KykusQlrzoSliFN7yGOlQTQ12rEC2EKAUbNHhrMHwOIypR2EYHgVpq1SWPwXIJnGVXRZ2qMx5qNetEiswsGroczpqaR5eRnLK7TC1/MV8MybYKWh3ItQP7cIO5Ukn37H7AlboonJo4yOQRZ3oC1r5Fsb1RFnEBmmAgf5BCFcpl40O5R+1SzOL4NaIPwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Search 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9c734e667ddbace33010effe884b2985/b9e4f/search-1.png&quot;
+        srcset=&quot;/static/9c734e667ddbace33010effe884b2985/cf440/search-1.png 148w,
+/static/9c734e667ddbace33010effe884b2985/d2d38/search-1.png 295w,
+/static/9c734e667ddbace33010effe884b2985/b9e4f/search-1.png 590w,
+/static/9c734e667ddbace33010effe884b2985/c5f2c/search-1.png 846w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7a987dc55b8a2de520f6ba01ef47f00b/c2e96/search-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 147.48538011695905%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFIUlEQVRIx5VVaVNTZxTOp9qZTmtdpi04/dR2auFrf0YXtc64zNj6QcVRFEWkohApQsgCSbQGQkggSAIJJCErARIjiNlucrPdJEBdqM7UEVxm2j/w9NwbXKos0w/PnPe8N++Z5zxniUgSd+KCrx+Xpy1oCppx7d4MDM8y6F1ioV/mkfofYCHSFENo9g+ifcYGedgJw8MYhv8uwvyCw9CLPEzPOQw+z8FE/kYw0+9Fu6N67E0a8RPTjz1MH34M6/D97W78MKsV7J5IL/ZGDdg127Mh+DeizYPV+OjGCui8efAUPjadxod0/tRyDqqwCzbmFm4/XkB8+QGiS/cR47H82kaW7iHz7CF2BzUQ7Rg5j9VQbj2Pz0fq8Z1dhgN2JX4e78LhCS2hG4cnVyzv+7vxC+HIdB++9bRC9BmxeBNl1rrXdrgWH3Qewvuyg9jUvh/vSfZhk3Q/NskOlGz7CqTkqw5hu+UsRPzD8pEVWN+ChaCvRrnuJMoNZHurSz7ZMv1JlOlOoHygBuWms9hhrhXeiHgW2wZrBGw3n8H24bP/haX2HXxipQxIlhLqSljJTFQ+VIsKawMqRy6h0t6ICqcYFWNiVI41CfZtVDov4wvbRaFgZavIJfra8Rusc+cxyp2BaiGCvqdp6Jcy0C0VYVhKE1IwUNPyVk/NbnqWwzHGjC3mGqFwb+su2ulohnWhAf35azAVJbieG4I674U+3wU1N45OLoDO3ARhElfnb2LgCYuqpIUCnhYC8kHehOgbRxMk7CQkMTfaY3ZI4j4okyb0s5cgZ0bRFnWiLeKANOFBa3wcuj8ZCjj8iuE7AXfam2AoqKHMeqEuEIusDR2ZCci5WYFVCcSQC6Kfk2L0iQdVrB1bTKfWYijGACfG9YQG1vw5GNPNuJqxoo2YSpM+yBJuSBliH/dAzfSgd8GLo4wFW4WU61YL2IjWZACKqAmKcC9awh60J3zoiPZBFjai5Y4TrXdslLIbzbNOXOVCOJZ4WZS61VPWc0rIGAckiQlI42NCQCUzgG5Wje50F6TsBMkwTvcu6B9GNy6KMu+hB75XminzU5BmZ6BIj5O2LigyvIaTFNiDroUZYjhEKdeslTIFpNZQpvyQx8bQmaTgjAu9mS50UJpy0lIRd0OVnYTmj2kYHkRxImVdm+FX1PXigg8t8xNoLNzExcIs+ZR6gbY450ZTzgMx58Xlwjiu3AtAvjiNfbN6bBs6szrDL0cbUB024eSsBeJYM/VeFeoZHWoyIfxKbdRQ9OBCwUvwoJ5z4RLnwa6QZu2AFVRlVXEa2rQRwbsH4btfB23ehuFFI6yPHdAuxqmZI9DRX0MPFWTkn/n1U+bbRpYL4HrGCH1RC0nmDok/CX1Oja6sHhKGNExTP7I+qrIbN55mcZxdr8rUNoqcH7IUVTEVhCLlIdBjNkj+FDqzfiraFDqyE8L46RYjOBo3YevQOlXm20FC8yqJOmieXWgN28mOkU+IOQW/ZdpKbN3QzN3CkejgBgFTXmEBSGgRlMaMHzeXcPcSfPC2uAu/00yvz5BS7iwEqLH9VJygkJ6SloGSZODT5BtdQd/47wqaFsOj+AYaEkMFR9uF5cX3l0aMDaCVCQhnOenJf5NRw0tZL3QPwji+fpVpH9KMChpF7Gi+7UZ39Ar6E/WkHd3PjAgpt1O6baSnphBCVWJ4veXQCOVCCOr5EJRzQajmb0EzP4aeuzY6h6Cau4muR9SHT5LQ/hWHcTlN68u8MsvvMvwXpmIeBHgLK1oAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Search 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7a987dc55b8a2de520f6ba01ef47f00b/b9e4f/search-2.png&quot;
+        srcset=&quot;/static/7a987dc55b8a2de520f6ba01ef47f00b/cf440/search-2.png 148w,
+/static/7a987dc55b8a2de520f6ba01ef47f00b/d2d38/search-2.png 295w,
+/static/7a987dc55b8a2de520f6ba01ef47f00b/b9e4f/search-2.png 590w,
+/static/7a987dc55b8a2de520f6ba01ef47f00b/c2e96/search-2.png 855w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/24a9ab35514651ce97bdf7d79c471e86/922ae/search-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 148.39816933638446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAE40lEQVRIx4VV60+bdRTu1H9AnRbIEj8Zo2yJyWbiFz/5BdkfoDPGxERd9AOXDuJW5NqWXt5eoC0dlLIBo6x0baEtvQJj3Cn0RikU3ILgUJkx/guP5/crENhK+fDk9P29fc97znme57yi0pE6vIwywsWHtbg81gxbegq+nSRCf2YR3F9H6BhZDnYWoejZTeJDTyNEhRIyvOOQ4ANXA+5MPoByzg3tih8CQ8wHYdl3KuqTQSiWx/C+S1o4YYnjVj7pUA3eMHyDC7qvIRK+woUjaG9wiDRf0r0beK3rW7ze/R3epSJE7OGTOJmwxF6Lko7vUWr6EaXGHwgUzTfz1/zsEF03ccku4c/wCsuc9TS3ej67Y9BZ6bAE4p6fILb+nI89+VjSXwXxQDVKBqshZhio4i/nCcUPJbg4VJ3HcA0ng2P4MFIbp1EL8Qh1wF7orDtE/XFnokv2WygfkaLc2YByTxMue1uI3SM0o3z0NNj5e85fIGZjKTAu0VW/HJp0EOpkAMq4H6r4OMEP5aofuvUorH+vovdFHL0HcVgPVnH/IImKiU68aa/mY3qZUNE1SqinB7XpEIRUEAJJQJ+JQE2JtXStW5+Ebi1/X5cJY/CfFCofmylhVeGEV30y/kcNVcigospUKz5oElRpMor7GSVsazqoUhNQrATQ+zyJymnT2QlPVqih6nRUHYvaNKtuAp0ZD+y5dujXxtGfM8J7YEPFlKVYhXJqz4+2WRfaSe3yBTcUS6NQxrxQLLggX/SiY/Ue1LFHUM/3wpp1UIWW4i0LjBCezAPFoofa9lHSMbQthaFcdGIoUQNL3ABZLIrunRiuT5vPaTk7SYSEoaV2GTHatQh0yVH0ZU3U8hiEzBSdE2k0hsF/0+eQ4lfAvtGKvnQ7kRAmQsZIQmHoUy4MpBthynpIQgG0x0ahiI3B8tssKiaNZ8vmE0poTjlhWHFAoAeFw62iTYRoDFGqNALT5hQlmoGR4tCLNK4Xq/AKqV+aDUG6EcKvuSAasuO4veaFdN1H8OJOxsvPm7ZCaCS0boXxWVCDt8mmZQU2legKWaluyYG65RHUzNlxm2bX8jSK5u0wRwuLlKQpF+KQbUeLJ2Qtd21Nw7gxhU4ip3tnAdbdRcISen6n33ssLvLYTdeDfyWKt8xko89OQMPYZY7hdiPrJQKH7gnmI50zr5tz0/hiqggp10jYQsJP+nNDSZZjOlSQHpn9mOCVK16oCRrytpzudZK3K8/ToSIWhGzBC/m8C21zjyih+1jk7LxtIcAdJJt3w0B65dtmuLrwDLkON9vQnb4LVYJaT45zXytJc6p4GJa0DfaMFEKcqo4HYPtj+bxtI0dPzgHjuoevKu4UtspobkfL4e76AxiyEb4n2QyLJmQtK1dJDrQEWFWyeRefFYOM2pcvsZbz3pbT0jBtPj6HFEpo3JiAPh3m6MhE0UGVGcjPArXYtf0Etv0Yl431eQzD/2WLy+Yj+o7UptyQrHl4rE2/Cskhagh1KQ8+HW/nH7CCpHzsbUVjzI3mpBe6vVlod2degWZ3AWoSt7D7BB178/g8qsdbZ7HMnMLmYqbWGEzkmi5aBOy35eksjLkZ9D0bRf8zJ4zbs+jfX6WWTWfPkLGsz0Y5u0parGr6ljB3MEb5dyURgTXThXsZDdrjIW7LYiz/D/dnNdE505KNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Search 3&quot;
+        title=&quot;&quot;
+        src=&quot;/static/24a9ab35514651ce97bdf7d79c471e86/b9e4f/search-3.png&quot;
+        srcset=&quot;/static/24a9ab35514651ce97bdf7d79c471e86/cf440/search-3.png 148w,
+/static/24a9ab35514651ce97bdf7d79c471e86/d2d38/search-3.png 295w,
+/static/24a9ab35514651ce97bdf7d79c471e86/b9e4f/search-3.png 590w,
+/static/24a9ab35514651ce97bdf7d79c471e86/922ae/search-3.png 874w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;The app and search functionality is rough, but it shows off the general concept.  You might have noticed some shortcomings:
+The API should cache.  The model contains some features that we’re not accounting for, like &lt;code class=&quot;language-text&quot;&gt;_&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;#&lt;/code&gt;.  We should weigh
+our search terms with the similarity score - terms that are less related to our original terms shouldn’t be as important
+in the search.  The search should use word boundaries, not substrings.  We need tests.  Etc… but this isn’t a full
+fledged project, just a tech demo. &lt;/p&gt;
+&lt;p&gt;This ends the series, hope you found it interesting.&lt;/p&gt;
+&lt;p&gt;Previous: &lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-3&quot;&gt;Part 3&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Word Vector Series: Part 3 - Creating a similar word service]]></title><description><![CDATA[Intro to Part 3In part 3, we’ll be using our new javascript word vector model to create a service that
+lists words similar to an input word…]]></description><link>https://matthewreishus.com//word-vector/2017-07-21-word-vector-pt-3/</link><guid isPermaLink="false">https://matthewreishus.com//word-vector/2017-07-21-word-vector-pt-3/</guid><pubDate>Fri, 21 Jul 2017 18:55:51 GMT</pubDate><content:encoded>&lt;h1&gt;Intro to Part 3&lt;/h1&gt;
+&lt;p&gt;In part 3, we’ll be using our new javascript word vector model to create a service that
+lists words similar to an input word.&lt;/p&gt;
+&lt;h1&gt;Finding similar words&lt;/h1&gt;
+&lt;p&gt;If we’re given a word, we want to find words similar to it.  How do we do that?  The most
+fundamental measure of distance is the &lt;a href=&quot;https://en.wikipedia.org/wiki/Euclidean_distance&quot;&gt;euclidean distance&lt;/a&gt;, however; it’s not used often in
+machine learning applications.   What makes sense to our intuitions tuned for 2d and 3d spaces
+might not work in a 300d space (see: &lt;a href=&quot;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.23.7409&amp;#x26;rep=rep1&amp;#x26;type=pdf&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;https://stats.stackexchange.com/questions/99171/why-is-euclidean-distance-not-a-good-metric-in-high-dimensions&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;http://www.overcomingbias.com/2017/07/high-dimensional-societes.html&quot;&gt;3&lt;/a&gt; &lt;a href=&quot;http://onlinelibrary.wiley.com/doi/10.1002/sam.11161/abstract&quot;&gt;4&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Instead, we can use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cosine_similarity&quot;&gt;cosine similarity&lt;/a&gt;, which will tell us if vectors are roughly pointing in the same direction or not:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5be84646d4a8cb7179c88cc63fc4b0fe/990db/cosine_sim.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 28.08988764044944%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAmklEQVQY022PXQvCMAxF0622bsMvfFB8EtGJj+r//2/e6BGiLHBom+TepGafaEXm7EUjErXM28IZNf/5d7i4YFaDwO8zhAUsmBT65jZR2GOQyDUY7cQaYQr1pdii/dkwM6ELmyXyzsCWX6NKbhU2a6e+7FssEJTQVBH3DOgY4LGBgb4aDa/iIUZxBMPsKe7iIk7iQG2kdqP//AIuigRPSZv/BwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Cosine similarity&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5be84646d4a8cb7179c88cc63fc4b0fe/b9e4f/cosine_sim.png&quot;
+        srcset=&quot;/static/5be84646d4a8cb7179c88cc63fc4b0fe/cf440/cosine_sim.png 148w,
+/static/5be84646d4a8cb7179c88cc63fc4b0fe/d2d38/cosine_sim.png 295w,
+/static/5be84646d4a8cb7179c88cc63fc4b0fe/b9e4f/cosine_sim.png 590w,
+/static/5be84646d4a8cb7179c88cc63fc4b0fe/f9b6a/cosine_sim.png 885w,
+/static/5be84646d4a8cb7179c88cc63fc4b0fe/990db/cosine_sim.png 890w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;Calculating cosine similarity (theory)&lt;/h1&gt;
+&lt;p&gt;This dot product formula contains the cosine of the angle between two vectors:&lt;/p&gt;
+&lt;p&gt;$\mathbf{a} \cdot \mathbf{b} = || \mathbf{a} ||_2 || \mathbf{b} ||_2 \cos \theta$&lt;/p&gt;
+&lt;p&gt;Solving for $\cos \theta$, we find:&lt;/p&gt;
+&lt;p&gt;$\cos \theta = \frac{\mathbf{a} \cdot \mathbf{b}}{
+|| \mathbf{a} ||_2 || \mathbf{b} ||_2
+}$&lt;/p&gt;
+&lt;p&gt;The dot product can also be expressed as the sum of the products of the components of each vector, or:&lt;/p&gt;
+&lt;p&gt;$ \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3 + \cdots + a_n b_n $&lt;/p&gt;
+&lt;p&gt;As a refresher,  $ || \mathbf{a} ||_2 $ is known as the L2 norm, or euclidean norm, or magnitude of a vector.&lt;/p&gt;
+&lt;p&gt;$ || \mathbf{a} ||_2 := \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} $&lt;/p&gt;
+&lt;p&gt;A neat result is: $ || \mathbf{a} ||_2 := \sqrt{\mathbf{a} \cdot \mathbf{a}} $&lt;/p&gt;
+&lt;h1&gt;Calculating cosine similarity (practice)&lt;/h1&gt;
+&lt;p&gt;Now that we know &lt;/p&gt;
+&lt;p&gt;$\cos \theta = \frac{\mathbf{a} \cdot \mathbf{b}}{
+|| \mathbf{a} ||_2 || \mathbf{b} ||_2
+}$&lt;/p&gt;
+&lt;p&gt;, let’s write some javascript to calculate it.&lt;/p&gt;
+&lt;p&gt;My first stab at it was:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;dotProduct&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;Array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;Array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;invalid arguments&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; zippedVectors  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; idx&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; products &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; zippedVectors&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; products&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;acc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; x&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; acc &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;magnitude&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;dotProduct&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;cosineSimilarity&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dotProduct&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;magnitude&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;magnitude&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I default to writing psuedo-immutable + functional style.  However in this case, the function
+turned out to be much slower than it needed to be.  I was able to get about a 10x speedup by
+not calculating the &lt;code class=&quot;language-text&quot;&gt;zippedVectors&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;products&lt;/code&gt; intermediate arrays:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;dotProduct&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;Array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;Array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;invalid arguments&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;acc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; idx&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; acc &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;magnitude&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;dotProduct&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;cosineSimilarity&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dotProduct&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;magnitude&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;magnitude&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Much better, even if the reduce is slightly awkward in my opinion.&lt;/p&gt;
+&lt;h1&gt;Almost done&lt;/h1&gt;
+&lt;p&gt;Now I just need a quick function to use the &lt;code class=&quot;language-text&quot;&gt;dotProduct&lt;/code&gt; function to find me a list a similar words:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;findSimiliar&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;word&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; threshold &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.45&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; maxResults &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;word &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; vectors&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; results &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; candidate &lt;span class=&quot;token keyword&quot;&gt;of&lt;/span&gt; Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vectors&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;candidate &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; word&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; similarity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;cosineSimilarity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vectors&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;word&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vectors&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;candidate&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;similarity &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; threshold&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		results&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;word&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; candidate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; similarity&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; results&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;similarity &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;similarity&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; maxResults&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Making an API&lt;/h1&gt;
+&lt;p&gt;With these functions and the model, we have the guts of our API ready.  I used &lt;a href=&quot;https://github.com/developit/express-es6-rest-api&quot;&gt;Express &amp;#x26; ES6 REST API Boilerplate
+&lt;/a&gt; and wrote a little bit of glue code to make an API that takes
+an input word and lists similar words.  One important detail is I told babel not to transform my 75 megabyte model
+file.  Here it is in action (w/ hard to read json):&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f7a528a169b4b4fb7d48f14d683ffcc7/c8b89/api_example.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 81.5217391304348%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACJUlEQVQ4y1VUSRLjIAz0PXF22+xbKv9/oqZbGGbmQAltjVALliM72dMmW9jEtSR7DLLv2Dsnx3HItu3yfDwgN/l8PvLA/v1+y/P5lM9p46L/9XrJ4p2XFJPEEKXkLMFDT1laq5BJQggqSylSa9WDKFtrsEfxiKdeoTN/cTQgOaAyOr0CJslweu/EA5AJMfZkAmaAj8NGPA8MwQMQAVSYEBmEACYQ0FoDezoPSP8dxnjmUpYznv6FhqHwROqtfTWICf/aubgvqFgPhF9bwuohgwKid1/eX0vuRkpWFM7r1tr7VyDpL+eVWb3aoWtPAbyYgFOyF+uNhAKQnLTZZI1MkmnK2+2m636/K8uUZJwMcz/0xSYnNlux0Ur8FsigvdNqsQg4RsMYo2A8jKPV5a4+xhlzyHJEJ65gYR495tCcczj6RaIIxERKJvc9Aaz28Th27bUCWlDtCIqVG4iA7rHYdF6dIExgorX2LyAq6oPfKyWBCmhw5SPusgckFfTOWTjtHBX273K5aP/WdZXr9Tp7yZ4NOyV9c2yU2cleVMlrkD36yeSYhD42IA/2PgV90bfU2ubMafAcUjcBI+xjJoff4fpswShA/VgLkRkYlYCoTzCez6q/gv5+w3mTUvIc8hGnYCyGbznnoht+EmM4OewMpP77/WZLdIjPZ5dTmp9Ef4pJH8BiQICPXnYDUnjNhMpqUCavaDa/pNF8JQP7MejretP99CP+D7mxocbl8gt1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;API Example&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f7a528a169b4b4fb7d48f14d683ffcc7/b9e4f/api_example.png&quot;
+        srcset=&quot;/static/f7a528a169b4b4fb7d48f14d683ffcc7/cf440/api_example.png 148w,
+/static/f7a528a169b4b4fb7d48f14d683ffcc7/d2d38/api_example.png 295w,
+/static/f7a528a169b4b4fb7d48f14d683ffcc7/b9e4f/api_example.png 590w,
+/static/f7a528a169b4b4fb7d48f14d683ffcc7/f9b6a/api_example.png 885w,
+/static/f7a528a169b4b4fb7d48f14d683ffcc7/2d849/api_example.png 1180w,
+/static/f7a528a169b4b4fb7d48f14d683ffcc7/c8b89/api_example.png 1288w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/mreishus/bfbb0a532f9ecdce536d80eb3e8897c1&quot;&gt;Gist of above&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this is on github: &lt;a href=&quot;https://github.com/mreishus/vector-search-example/tree/03_added_vector_service&quot;&gt;Code&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Up next&lt;/h1&gt;
+&lt;p&gt;In part 4, we’ll add the service to our react app.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Word Vector Series: Part 2 - Downloading the model]]></title><description><![CDATA[Intro to Part 2In part 2, we’ll be downloading the model and trimming it to a reasonable size.Previous: Part 1 
+Next: Part 3Downloading the…]]></description><link>https://matthewreishus.com//word-vector/2017-07-21-word-vector-pt-2/</link><guid isPermaLink="false">https://matthewreishus.com//word-vector/2017-07-21-word-vector-pt-2/</guid><pubDate>Fri, 21 Jul 2017 16:23:45 GMT</pubDate><content:encoded>&lt;h1&gt;Intro to Part 2&lt;/h1&gt;
+&lt;p&gt;In part 2, we’ll be downloading the model and trimming it to a reasonable size.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Previous: &lt;a href=&quot;/word-vector/2017-07-19-word-vector-pt-1&quot;&gt;Part 1&lt;/a&gt; &lt;br /&gt;
+Next: &lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-3&quot;&gt;Part 3&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Downloading the model&lt;/h1&gt;
+&lt;p&gt;Download GoogleNews-vectors-negative300.bin.gz from either
+&lt;a href=&quot;https://code.google.com/archive/p/word2vec/&quot;&gt;code.google.com&lt;/a&gt; (requires a browser, ctrl-f negative300)
+or &lt;a href=&quot;https://github.com/mmihaltz/word2vec-GoogleNews-vectors&quot;&gt;this github archive&lt;/a&gt; (requires git-lfs).&lt;/p&gt;
+&lt;p&gt;Unzip the file with gzip.  It’s quite large and in a binary format made for a python library called word2vec.  I’d
+like to make the service in nodejs, so let’s convert it to text.  We can use a program called &lt;a href=&quot;https://github.com/marekrei/convertvec&quot;&gt;convertvec&lt;/a&gt; to do this. An actual command list looks something like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ git clone git@github.com:marekrei/convertvec.git
+$ cd convertvec
+$ make
+$ cp convertvec ../cv
+$ cd ..
+$ chmod +x cv
+$ ./cv bin2txt GoogleNews-vectors-negative300.bin GoogleNews-vectors-negative300.txt
+$ rm -rf convertvec&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now you should have &lt;code class=&quot;language-text&quot;&gt;GoogleNews-vectors-negative300.txt&lt;/code&gt;.  It’s huge - 8 gigs - and contains 3 million lines (words).
+The format looks like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;in 0.070312 0.086914 0.087891 0.062500 0.069336 -0.108887 -0.081543 -0.154297 0.020752 0.131836 -0.113770 -0.037354 0.069336 0.078125 -0.103027 -0.097656 0.044189 0.102539 -0.060791 -0.036133 -0.045410 0.047363 -0.120605 -0.063965 0.002258 0.037109 -0.002914 0.117676 0.061768 0.063965 0.081055 -0.068848 -0.021362 0.055176 -0.085449 0.068848 -0.127930 -0.033203 0.098633 0.175781 0.110840 -0.034668 -0.047119 -0.008484 0.035889 0.103027 0.026978 -0.028687 -0.005127 0.106445 0.059814 0.094238 0.033691 -0.027100 -0.094238 0.001030 -0.048340 0.034424 0.081055 -0.113281 -0.088867 0.035889 -0.145508 -0.244141 -0.061523 0.052979 0.056885 0.179688 0.061035 0.086914 0.124023 -0.040283 0.022583 0.177734 -0.029663 -0.029663 0.117188 0.031128 -0.096191 0.066406 0.004700 -0.080078 0.062988 -0.020630 -0.054688 -0.135742 -0.063477 0.083496 -0.063965 0.021484 0.077148 -0.037109 -0.033691 -0.183594 -0.072754 0.015869 0.093262 -0.061523 -0.014221 -0.003448 0.011108 -0.158203 -0.017090 0.006195 -0.008728 -0.080566 -0.015259 -0.087891 0.003479 -0.016113 -0.012329 0.097656 -0.139648 -0.085938 -0.026855 0.053955 0.132812 0.112793 0.121094 0.085449 -0.007111 0.044678 -0.145508 -0.003204 -0.117676 -0.065430 0.071289 -0.094238 -0.030273 0.120117 0.080078 -0.094727 -0.162109 -0.077637 0.021240 -0.081543 0.003937 -0.157227 -0.098145 0.039795 0.039307 -0.009094 0.103027 0.067871 -0.042725 0.063477 -0.049072 0.020874 -0.166992 0.093262 0.093750 0.006866 0.053711 0.052490 -0.024414 -0.032471 -0.061523 -0.005554 0.096191 0.037842 0.012207 -0.043945 -0.007477 0.105469 0.020386 0.145508 0.082031 0.005768 0.004578 -0.092773 -0.138672 -0.057373 -0.051514 -0.130859 -0.139648 -0.020508 -0.027100 0.032715 0.104980 -0.002335 -0.022583 0.000504 -0.110840 0.084961 -0.129883 -0.017456 -0.000359 0.107910 0.088867 0.044678 0.025146 0.023804 0.081055 0.023682 -0.109863 0.005371 -0.017700 -0.033936 -0.032959 -0.164062 0.095703 -0.018311 0.005310 -0.034424 -0.044189 -0.066406 -0.017944 -0.029663 -0.007599 -0.051270 -0.054199 0.089355 -0.071777 0.015259 -0.082520 -0.031738 0.035645 -0.021240 -0.059326 -0.013062 0.046875 0.023071 0.020996 -0.078613 -0.008057 0.019531 -0.005554 0.041504 0.027832 0.013611 0.034668 -0.182617 0.120117 0.074219 -0.041016 -0.009949 0.042969 -0.007294 0.123047 0.057617 -0.053467 -0.032227 -0.009094 -0.046631 0.043945 -0.050781 0.068848 0.002991 -0.004181 -0.044189 0.073730 -0.012756 0.067383 0.006287 0.075195 -0.037842 0.004883 0.044678 -0.067383 0.009705 0.004730 0.020508 0.071289 0.170898 0.173828 0.055664 0.091309 -0.037354 0.049805 -0.039307 0.044189 0.062500 0.048584 -0.053223 0.048828 -0.130859 -0.028931 -0.036133 -0.060791 -0.057373 0.123047 -0.082520 -0.011902 0.125000 0.001358 0.063965 -0.106445 -0.143555 -0.042236 0.024048 -0.168945 -0.088867 -0.080566 0.064941 0.061279 -0.047363 -0.058838 -0.047607 0.014465 -0.062500 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I’d like to make a simple service that has a smallish resource footprint, so let’s not load the whole thing.&lt;br&gt;
+The words at sorted by popularity.  At the top of the file we have &lt;code class=&quot;language-text&quot;&gt;&amp;lt;/s&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;in&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;for&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;that&lt;/code&gt;;
+at the bottom, we have &lt;code class=&quot;language-text&quot;&gt;Mezze_Cafe&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;pulverizes_boulders&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;snowcapped_Caucasus&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Some things to notice:  The model uses capital letters sometimes, it contains compound phrases separated by
+underscores, and there are some special codes.  Our implementation will only look up single words for simplicity, but
+we need to make sure to take care of capitalization:  the user could type &lt;code class=&quot;language-text&quot;&gt;monday&lt;/code&gt; but the model only contains &lt;code class=&quot;language-text&quot;&gt;Monday&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Trimming the model&lt;/h1&gt;
+&lt;p&gt;So let’s cut off a section of the top of the file and convert it to a javascript object.  I wrote a quick
+ruby program to do this (it won’t win any awards!):&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!env ruby&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;json&apos;&lt;/span&gt;
+
+input_array &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ARGV&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; input_array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+  puts &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;#{&lt;/span&gt;$&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;}&lt;/span&gt;&lt;/span&gt;: How many words should I include in the model?&quot;&lt;/span&gt;
+  puts &lt;span class=&quot;token string&quot;&gt;&quot;Use \&quot;./&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;#{&lt;/span&gt;$&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;}&lt;/span&gt;&lt;/span&gt; 10000\&quot; to make a 10,000 word model.&quot;&lt;/span&gt;
+  exit
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+
+limit &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ARGV&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shift
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;limit &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;/\A\d+\Z/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  puts &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;#{&lt;/span&gt;$&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;}&lt;/span&gt;&lt;/span&gt;: Please provide a limit in numbers.&quot;&lt;/span&gt;
+  puts &lt;span class=&quot;token string&quot;&gt;&quot;Use \&quot;./&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;#{&lt;/span&gt;$&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;}&lt;/span&gt;&lt;/span&gt; 10000\&quot; to make a 10,000 word model.&quot;&lt;/span&gt;
+  exit
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+limit &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; limit&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;to_i
+
+puts &lt;span class=&quot;token string&quot;&gt;&quot;module.exports = {&quot;&lt;/span&gt;
+words_seen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+output_index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;open&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;./GoogleNews-vectors-negative300.txt&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;r&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;file&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
+  file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;each_with_index &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;line&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; input_index&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; input_index &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+    line_array &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; line&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split
+    word &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; line_array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shift&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;downcase
+
+    &lt;span class=&quot;token keyword&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; words_seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;key&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;word&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    words_seen&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;word&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+
+    vectorPart &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; line_array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;join&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    puts &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;generate&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;word&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;}&lt;/span&gt;&lt;/span&gt;: [&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter tag&quot;&gt;#{&lt;/span&gt;vectorPart&lt;span class=&quot;token delimiter tag&quot;&gt;}&lt;/span&gt;&lt;/span&gt;],&quot;&lt;/span&gt;
+    output_index &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; output_index &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; limit
+  &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+puts &lt;span class=&quot;token string&quot;&gt;&quot;};&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Use it like so: &lt;code class=&quot;language-text&quot;&gt;$ ./make_model.rb 25000 &amp;gt; ../words25k.js&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A 25k word model is about 75 megabytes, and includes a reasonable number of words.  Here’s a graph showing
+estimated vocabulary size for English native speakers from &lt;a href=&quot;http://testyourvocab.com/&quot;&gt;testyourvocab.com&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/81952aa53e57f10e3403a6457b690e14/3fc56/vocab1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 57.74877650897226%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHci4LGB//EABcQAAMBAAAAAAAAAAAAAAAAAAEQEQD/2gAIAQEAAQUCKrg3/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACAx/9oACAEBAAY/AiL/AP/EABwQAAIBBQEAAAAAAAAAAAAAAAABERAhMUFhcf/aAAgBAQABPyFE9S/SICtzRHI//9oADAMBAAIAAwAAABBjD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQADAQADAAAAAAAAAAAAAAEAESFRMWFx/9oACAEBAAE/EEBXR0EFoFdtaiovfyJuZEoW+Z6E/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Vocab graph&quot;
+        title=&quot;&quot;
+        src=&quot;/static/81952aa53e57f10e3403a6457b690e14/c739e/vocab1.jpg&quot;
+        srcset=&quot;/static/81952aa53e57f10e3403a6457b690e14/8ee9c/vocab1.jpg 148w,
+/static/81952aa53e57f10e3403a6457b690e14/ebbe7/vocab1.jpg 295w,
+/static/81952aa53e57f10e3403a6457b690e14/c739e/vocab1.jpg 590w,
+/static/81952aa53e57f10e3403a6457b690e14/3fc56/vocab1.jpg 613w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;Up next&lt;/h1&gt;
+&lt;p&gt;In part 3, we’ll be using some basic linear algebra to find related words.&lt;/p&gt;
+&lt;p&gt;Previous: &lt;a href=&quot;/word-vector/2017-07-19-word-vector-pt-1&quot;&gt;Part 1&lt;/a&gt; &lt;br /&gt;
+Next: &lt;a href=&quot;/word-vector/2017-07-21-word-vector-pt-3&quot;&gt;Part 3&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Word Vector Series: Part 1 - Intro]]></title><description><![CDATA[Intro to Part 1In this series, I’ll be showing how to use an off-the-shelf model mapping english words to
+vectors in your own programs.   We…]]></description><link>https://matthewreishus.com//word-vector/2017-07-19-word-vector-pt-1/</link><guid isPermaLink="false">https://matthewreishus.com//word-vector/2017-07-19-word-vector-pt-1/</guid><pubDate>Thu, 20 Jul 2017 00:08:23 GMT</pubDate><content:encoded>&lt;h1&gt;Intro to Part 1&lt;/h1&gt;
+&lt;p&gt;In this series, I’ll be showing how to use an off-the-shelf model mapping english words to
+vectors in your own programs.   We’ll start with a simple react application searching a dataset,
+then use the word vector model to enhance the search.  We want to search for more than the exact
+word the user types.  For example, if I type &lt;code class=&quot;language-text&quot;&gt;sailing&lt;/code&gt;, perhaps we will match the words &lt;code class=&quot;language-text&quot;&gt;boat&lt;/code&gt;,
+&lt;code class=&quot;language-text&quot;&gt;yacht&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;h1&gt;What is a word vector?&lt;/h1&gt;
+&lt;p&gt;It’s a technique used in machine learning where words are translated into a vector space.
+You might also see it referred to as an &lt;code class=&quot;language-text&quot;&gt;embedding&lt;/code&gt;.  There are a few different techniques to generate these
+mappings, but that’s not the focus of this blog series.  We’ll simply be downloading a well-known
+pre-trained model and use it in our application: &lt;a href=&quot;https://code.google.com/archive/p/word2vec/&quot;&gt;GoogleNews-vectors-negative300.bin.gz&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This one was trained off of 100 billion words from google news and is a few years old at this point.
+You can find many other pretrained models, some generated with different techniques online;
+however, I’ve had excellent results using this one.&lt;/p&gt;
+&lt;p&gt;Each word is encoded as a vector in 300 dimensions.  For example, the word &lt;code class=&quot;language-text&quot;&gt;chair&lt;/code&gt; is represented by this array:
+&lt;code class=&quot;language-text&quot;&gt;[0.118652, -0.375000, 0.161133, 0.002151, ...295 numbers omitted.. , 0.171875]&lt;/code&gt;.  One interesting feature is
+that some intuitive concepts might be embedded in simple linear transformations.  For example, perhaps adding
+&lt;code class=&quot;language-text&quot;&gt;[0.5, 0.3, 0.6, 0, 0, 0, 0, 0....]&lt;/code&gt; to the vector for &lt;code class=&quot;language-text&quot;&gt;man&lt;/code&gt; ends up being the vector for &lt;code class=&quot;language-text&quot;&gt;woman&lt;/code&gt;, and adding it
+to &lt;code class=&quot;language-text&quot;&gt;king&lt;/code&gt; gets you &lt;code class=&quot;language-text&quot;&gt;queen&lt;/code&gt;.  This is simplifying a bit, the &lt;code class=&quot;language-text&quot;&gt;male-&amp;gt;female&lt;/code&gt; vector is not as clean as my example,
+but it’s still a very neat result.  Here’s a graphic from google showing some linear relationships:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b1735761f02a7cb51e8835cf0a8d77d3/9910f/wordvec-linear-relationships.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 35.01661129568106%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA7ElEQVQY02VQbW/GIAjs//+PNlnzfJotKorga0fXpGk2QhDRuyO3nOc55zz/RWvtzwRD8Ei5dikjszDzolM9WEpr/f01Z0bnaikPe0RMxJ5qoAohOQdL68P75FGZGhPnnH+xI5NjsGNMzZtORIiy1MGlZy6ZaFHR/UAEjBAR4rziRDx2u11LgUUAbXrvzjkkUVkXxR4upbTUWhOlFAlACVChY4wY9YmtNSlAEbmVvXf28C4VzW97kCor+DHsbm68VmZ6dr7EW1Nz+jhbn1KKAi/DPp+PMUbrm2Lfd2PWEMLbxRjjtn2t62qt1esPdImWVI18LPIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Wordvec linear relationships&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b1735761f02a7cb51e8835cf0a8d77d3/b9e4f/wordvec-linear-relationships.png&quot;
+        srcset=&quot;/static/b1735761f02a7cb51e8835cf0a8d77d3/cf440/wordvec-linear-relationships.png 148w,
+/static/b1735761f02a7cb51e8835cf0a8d77d3/d2d38/wordvec-linear-relationships.png 295w,
+/static/b1735761f02a7cb51e8835cf0a8d77d3/b9e4f/wordvec-linear-relationships.png 590w,
+/static/b1735761f02a7cb51e8835cf0a8d77d3/f9b6a/wordvec-linear-relationships.png 885w,
+/static/b1735761f02a7cb51e8835cf0a8d77d3/2d849/wordvec-linear-relationships.png 1180w,
+/static/b1735761f02a7cb51e8835cf0a8d77d3/9910f/wordvec-linear-relationships.png 1505w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;I’ve explored this feature some.  I’ve found it to be impressive but a bit messy and not as clean as the diagrams.
+I haven’t found any practical use for it. (Analogy completer?)&lt;/p&gt;
+&lt;h1&gt;Starting point: A simple app without any word vectors&lt;/h1&gt;
+&lt;p&gt;Let’s start with a simple react app that loads a dataset in memory and lets you type to search it.&lt;br&gt;
+I made a quick one that searches a list of all S&amp;#x26;P 500 companies and their descriptions.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/vector-apps/part1/&quot;&gt;Here is the app&lt;/a&gt;.
+&lt;a href=&quot;https://github.com/mreishus/vector-search-example/tree/02_lunr_search/front-end&quot;&gt;Here is the source code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I made it quickly using &lt;code class=&quot;language-text&quot;&gt;create-react-app&lt;/code&gt;.  The CSS classes are from &lt;a href=&quot;http://tachyons.io/&quot;&gt;tachyons&lt;/a&gt; - they will
+look weird if you’ve never seen them before.  It uses &lt;a href=&quot;https://lunrjs.com/&quot;&gt;lunrjs&lt;/a&gt; to search.&lt;/p&gt;
+&lt;h1&gt;Up Next&lt;/h1&gt;
+&lt;p&gt;Next, we will start building a related words service using the &lt;a href=&quot;https://code.google.com/archive/p/word2vec/&quot;&gt;GoogleNews-vectors-negative300.bin.gz&lt;/a&gt; model and make the app use it.&lt;/p&gt;</content:encoded></item></channel></rss>
