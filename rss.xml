@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Jun 2019 15:01:44 GMT</lastBuildDate><item><title><![CDATA[Visually Classifying between 600 SNES games with 94% accuracy]]></title><description><![CDATA[In the online class Practical Deep Learning for Coders
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 14 Jun 2019 23:13:17 GMT</lastBuildDate><item><title><![CDATA[Visually Classifying between 600 SNES games with 94% accuracy]]></title><description><![CDATA[In the online class Practical Deep Learning for Coders
 2019, we learned how to create a
 world-class image classifer model for the Oxford…]]></description><link>https://matthewreishus.com//2019-06-03-snes-classifier/</link><guid isPermaLink="false">https://matthewreishus.com//2019-06-03-snes-classifier/</guid><pubDate>Mon, 03 Jun 2019 14:50:51 GMT</pubDate><content:encoded>&lt;p&gt;In the online class &lt;a href=&quot;https://www.fast.ai/2019/01/24/course-v3/&quot;&gt;Practical Deep Learning for Coders
 2019&lt;/a&gt;, we learned how to create a
@@ -60,26 +60,24 @@ example made for this blog series. &lt;/p&gt;
 &lt;h1&gt;Screenshots&lt;/h1&gt;
 &lt;p&gt;Unfortunately, I can’t host a demo of the app here since this is hosted by github pages.  However, I’ve taken a few
 screenshots of the related search in action:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/9c734e667ddbace33010effe884b2985/c5f2c/search-1.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 144.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFCElEQVRIx52VWU8bVxTH/ZaoD+1T0yxSk0aqVKnb56iUl6p9qqomtEqztKEEAiYJJGADNsYGDDbGmKTBGBsYvATbYBsIwXjfPd5tyNI0qVqaLp/g3zPjNA8Nnoc+/HTm3pk599xz/+dc0Wh5A8PFdWgfBjBauYfJn6O4tZfC9G/J/4VIEbKj5c4IxMwkOq16TFS2YPm7CNNzFqY/crD8WcA8T1GQBYL7ViQuu9BZcUNcdpNdATfuKDrRUSJbcuIcy+Cb7AKa0hY0pcxk98OC0/TuIrsE0SFLK+pcfkF9/CY9vzXfiubtWSjjLowVKC3lTWhK915hvLiB6eo2mvy3ITqycAX7cXi+DccW29F9z4xpvwtMMQRHNV5nJwFHLf4SWzUG78Ms2qILjR3+y+uTZ/HaxNc4qDmDA+qvcIB7nj6Lg4azdfuCA8Qbc80QHba04dAcbXWuBYfMtE1+2y0vU3B4nqO1vgBFzHGUOMZ0vMJR+kZ0xHQZJ0xX8I65HScZMY5bb+C4rRcnrF1ENz1LaK4HJ62dOL4oxgmmE28vdvApOfJfOIcf2G+iP+OCJHYXkoQblsJFMNnPMJWTw5CVwpY9BUv2DAbYNaifRDD5NIofUgwf/X4pEn3k6MEoCXs46wNTlWJt50s4q83wVr6AsXYLhpwBpvIIbJVOjJd8pM88rpdX+PQ0dChPujAQcUAVm8VQzAJ5zI6h0G2yy+gJrkAWX4Eq+iP6wzZMVP1oSy7xkmrocLiwBlXWA1VhE8rcBlR5iri4BRXrwzC7Wn+X38RQxgNdzY+OrIPX6v4O7/ZAkXZjMOGCIuWGgqIdTDgxlF7hLTc/GHdCHl+GjPKsrdxHe8Yu7FBOPw6EHYQd/UEbDzfupzrvCyxBul1HQqjo4NoFI6QtKzKUJ8pXX4gcURRcZANRshQxtxiHjCLsowXVuTWIC87Gh/IxOdTtBqDfDfKdZvpJDMbnOczssTDuZTFLXWf29yzPzF4GC3+V0F0SOOV3mWv4NmLC+ZgZF+LzOB+dw/eJGVxKGmk8h3MRIlq33HffkQo+3dBSRTXY8vu2G5Cmnegnbsaoq+QNWMp9Djv7CfRlDdTP0tA8C2H8WQRjT8PQ/5pAS8YqpMNeEvYGRnNeksg6dKVlrNVI3JULGKtsQ1MLYrxMbap6H6MkL31tG+1pu7AOuYOQbC2gN+CAMkSVEWmCJqrEcHwWgyEjJH6G3i+ix79E1bKJzvyycKUoWQ9p8IXuUj70pNJQZZxYyl/CrYIGA4l1KNMuwg4jHc7VklvYoSrPVYSXqmQdatYKc0UGXd4IBeuHIruJqeIM7u+eAlPuwO1f0hDn7jZuDh+SQxlFJt1mIA05oKCT1Ie7oI5PQRIgkUeWMRLWQhcUU52b6CrYpEqxCQt7JOeDKkkNIOmGKuXFYJLqNumju8TJz008iEL7II3Jx1HMPE2gS0iH71EjvVZwobu8iq6im6BnuvE4ey3n5OmmnHFz12mut+LF6eCdxjrkHLYEzbgcIMheoYumhW661tA8btAiNysesh6KykusQlrzoSliFN7yGOlQTQ12rEC2EKAUbNHhrMHwOIypR2EYHgVpq1SWPwXIJnGVXRZ2qMx5qNetEiswsGroczpqaR5eRnLK7TC1/MV8MybYKWh3ItQP7cIO5Ukn37H7AlboonJo4yOQRZ3oC1r5Fsb1RFnEBmmAgf5BCFcpl40O5R+1SzOL4NaIPwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Search 1&quot;
         title=&quot;&quot;
         src=&quot;/static/9c734e667ddbace33010effe884b2985/b9e4f/search-1.png&quot;
@@ -89,31 +87,26 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/9c734e667ddbace33010effe884b2985/c5f2c/search-1.png 846w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/7a987dc55b8a2de520f6ba01ef47f00b/c2e96/search-2.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 147.48538011695905%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFIUlEQVRIx5VVaVNTZxTOp9qZTmtdpi04/dR2auFrf0YXtc64zNj6QcVRFEWkohApQsgCSbQGQkggSAIJJCErARIjiNlucrPdJEBdqM7UEVxm2j/w9NwbXKos0w/PnPe8N++Z5zxniUgSd+KCrx+Xpy1oCppx7d4MDM8y6F1ioV/mkfofYCHSFENo9g+ifcYGedgJw8MYhv8uwvyCw9CLPEzPOQw+z8FE/kYw0+9Fu6N67E0a8RPTjz1MH34M6/D97W78MKsV7J5IL/ZGDdg127Mh+DeizYPV+OjGCui8efAUPjadxod0/tRyDqqwCzbmFm4/XkB8+QGiS/cR47H82kaW7iHz7CF2BzUQ7Rg5j9VQbj2Pz0fq8Z1dhgN2JX4e78LhCS2hG4cnVyzv+7vxC+HIdB++9bRC9BmxeBNl1rrXdrgWH3Qewvuyg9jUvh/vSfZhk3Q/NskOlGz7CqTkqw5hu+UsRPzD8pEVWN+ChaCvRrnuJMoNZHurSz7ZMv1JlOlOoHygBuWms9hhrhXeiHgW2wZrBGw3n8H24bP/haX2HXxipQxIlhLqSljJTFQ+VIsKawMqRy6h0t6ICqcYFWNiVI41CfZtVDov4wvbRaFgZavIJfra8Rusc+cxyp2BaiGCvqdp6Jcy0C0VYVhKE1IwUNPyVk/NbnqWwzHGjC3mGqFwb+su2ulohnWhAf35azAVJbieG4I674U+3wU1N45OLoDO3ARhElfnb2LgCYuqpIUCnhYC8kHehOgbRxMk7CQkMTfaY3ZI4j4okyb0s5cgZ0bRFnWiLeKANOFBa3wcuj8ZCjj8iuE7AXfam2AoqKHMeqEuEIusDR2ZCci5WYFVCcSQC6Kfk2L0iQdVrB1bTKfWYijGACfG9YQG1vw5GNPNuJqxoo2YSpM+yBJuSBliH/dAzfSgd8GLo4wFW4WU61YL2IjWZACKqAmKcC9awh60J3zoiPZBFjai5Y4TrXdslLIbzbNOXOVCOJZ4WZS61VPWc0rIGAckiQlI42NCQCUzgG5Wje50F6TsBMkwTvcu6B9GNy6KMu+hB75XminzU5BmZ6BIj5O2LigyvIaTFNiDroUZYjhEKdeslTIFpNZQpvyQx8bQmaTgjAu9mS50UJpy0lIRd0OVnYTmj2kYHkRxImVdm+FX1PXigg8t8xNoLNzExcIs+ZR6gbY450ZTzgMx58Xlwjiu3AtAvjiNfbN6bBs6szrDL0cbUB024eSsBeJYM/VeFeoZHWoyIfxKbdRQ9OBCwUvwoJ5z4RLnwa6QZu2AFVRlVXEa2rQRwbsH4btfB23ehuFFI6yPHdAuxqmZI9DRX0MPFWTkn/n1U+bbRpYL4HrGCH1RC0nmDok/CX1Oja6sHhKGNExTP7I+qrIbN55mcZxdr8rUNoqcH7IUVTEVhCLlIdBjNkj+FDqzfiraFDqyE8L46RYjOBo3YevQOlXm20FC8yqJOmieXWgN28mOkU+IOQW/ZdpKbN3QzN3CkejgBgFTXmEBSGgRlMaMHzeXcPcSfPC2uAu/00yvz5BS7iwEqLH9VJygkJ6SloGSZODT5BtdQd/47wqaFsOj+AYaEkMFR9uF5cX3l0aMDaCVCQhnOenJf5NRw0tZL3QPwji+fpVpH9KMChpF7Gi+7UZ39Ar6E/WkHd3PjAgpt1O6baSnphBCVWJ4veXQCOVCCOr5EJRzQajmb0EzP4aeuzY6h6Cau4muR9SHT5LQ/hWHcTlN68u8MsvvMvwXpmIeBHgLK1oAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Search 2&quot;
         title=&quot;&quot;
         src=&quot;/static/7a987dc55b8a2de520f6ba01ef47f00b/b9e4f/search-2.png&quot;
@@ -123,31 +116,26 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/7a987dc55b8a2de520f6ba01ef47f00b/c2e96/search-2.png 855w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/24a9ab35514651ce97bdf7d79c471e86/922ae/search-3.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 148.39816933638446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAE40lEQVRIx4VV60+bdRTu1H9AnRbIEj8Zo2yJyWbiFz/5BdkfoDPGxERd9AOXDuJW5NqWXt5eoC0dlLIBo6x0baEtvQJj3Cn0RikU3ILgUJkx/guP5/crENhK+fDk9P29fc97znme57yi0pE6vIwywsWHtbg81gxbegq+nSRCf2YR3F9H6BhZDnYWoejZTeJDTyNEhRIyvOOQ4ANXA+5MPoByzg3tih8CQ8wHYdl3KuqTQSiWx/C+S1o4YYnjVj7pUA3eMHyDC7qvIRK+woUjaG9wiDRf0r0beK3rW7ze/R3epSJE7OGTOJmwxF6Lko7vUWr6EaXGHwgUzTfz1/zsEF03ccku4c/wCsuc9TS3ej67Y9BZ6bAE4p6fILb+nI89+VjSXwXxQDVKBqshZhio4i/nCcUPJbg4VJ3HcA0ng2P4MFIbp1EL8Qh1wF7orDtE/XFnokv2WygfkaLc2YByTxMue1uI3SM0o3z0NNj5e85fIGZjKTAu0VW/HJp0EOpkAMq4H6r4OMEP5aofuvUorH+vovdFHL0HcVgPVnH/IImKiU68aa/mY3qZUNE1SqinB7XpEIRUEAJJQJ+JQE2JtXStW5+Ebi1/X5cJY/CfFCofmylhVeGEV30y/kcNVcigospUKz5oElRpMor7GSVsazqoUhNQrATQ+zyJymnT2QlPVqih6nRUHYvaNKtuAp0ZD+y5dujXxtGfM8J7YEPFlKVYhXJqz4+2WRfaSe3yBTcUS6NQxrxQLLggX/SiY/Ue1LFHUM/3wpp1UIWW4i0LjBCezAPFoofa9lHSMbQthaFcdGIoUQNL3ABZLIrunRiuT5vPaTk7SYSEoaV2GTHatQh0yVH0ZU3U8hiEzBSdE2k0hsF/0+eQ4lfAvtGKvnQ7kRAmQsZIQmHoUy4MpBthynpIQgG0x0ahiI3B8tssKiaNZ8vmE0poTjlhWHFAoAeFw62iTYRoDFGqNALT5hQlmoGR4tCLNK4Xq/AKqV+aDUG6EcKvuSAasuO4veaFdN1H8OJOxsvPm7ZCaCS0boXxWVCDt8mmZQU2legKWaluyYG65RHUzNlxm2bX8jSK5u0wRwuLlKQpF+KQbUeLJ2Qtd21Nw7gxhU4ip3tnAdbdRcISen6n33ssLvLYTdeDfyWKt8xko89OQMPYZY7hdiPrJQKH7gnmI50zr5tz0/hiqggp10jYQsJP+nNDSZZjOlSQHpn9mOCVK16oCRrytpzudZK3K8/ToSIWhGzBC/m8C21zjyih+1jk7LxtIcAdJJt3w0B65dtmuLrwDLkON9vQnb4LVYJaT45zXytJc6p4GJa0DfaMFEKcqo4HYPtj+bxtI0dPzgHjuoevKu4UtspobkfL4e76AxiyEb4n2QyLJmQtK1dJDrQEWFWyeRefFYOM2pcvsZbz3pbT0jBtPj6HFEpo3JiAPh3m6MhE0UGVGcjPArXYtf0Etv0Yl431eQzD/2WLy+Yj+o7UptyQrHl4rE2/Cskhagh1KQ8+HW/nH7CCpHzsbUVjzI3mpBe6vVlod2degWZ3AWoSt7D7BB178/g8qsdbZ7HMnMLmYqbWGEzkmi5aBOy35eksjLkZ9D0bRf8zJ4zbs+jfX6WWTWfPkLGsz0Y5u0parGr6ljB3MEb5dyURgTXThXsZDdrjIW7LYiz/D/dnNdE505KNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Search 3&quot;
         title=&quot;&quot;
         src=&quot;/static/24a9ab35514651ce97bdf7d79c471e86/b9e4f/search-3.png&quot;
@@ -157,11 +145,8 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/24a9ab35514651ce97bdf7d79c471e86/922ae/search-3.png 874w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;The app and search functionality is rough, but it shows off the general concept.  You might have noticed some shortcomings:
 The API should cache.  The model contains some features that we’re not accounting for, like &lt;code class=&quot;language-text&quot;&gt;_&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;#&lt;/code&gt;.  We should weigh
@@ -179,26 +164,24 @@ fundamental measure of distance is the &lt;a href=&quot;https://en.wikipedia.org
 machine learning applications.   What makes sense to our intuitions tuned for 2d and 3d spaces
 might not work in a 300d space (see: &lt;a href=&quot;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.23.7409&amp;#x26;rep=rep1&amp;#x26;type=pdf&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;https://stats.stackexchange.com/questions/99171/why-is-euclidean-distance-not-a-good-metric-in-high-dimensions&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;http://www.overcomingbias.com/2017/07/high-dimensional-societes.html&quot;&gt;3&lt;/a&gt; &lt;a href=&quot;http://onlinelibrary.wiley.com/doi/10.1002/sam.11161/abstract&quot;&gt;4&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Instead, we can use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cosine_similarity&quot;&gt;cosine similarity&lt;/a&gt;, which will tell us if vectors are roughly pointing in the same direction or not:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/5be84646d4a8cb7179c88cc63fc4b0fe/990db/cosine_sim.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 28.08988764044944%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAmklEQVQY022PXQvCMAxF0622bsMvfFB8EtGJj+r//2/e6BGiLHBom+TepGafaEXm7EUjErXM28IZNf/5d7i4YFaDwO8zhAUsmBT65jZR2GOQyDUY7cQaYQr1pdii/dkwM6ELmyXyzsCWX6NKbhU2a6e+7FssEJTQVBH3DOgY4LGBgb4aDa/iIUZxBMPsKe7iIk7iQG2kdqP//AIuigRPSZv/BwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Cosine similarity&quot;
         title=&quot;&quot;
         src=&quot;/static/5be84646d4a8cb7179c88cc63fc4b0fe/b9e4f/cosine_sim.png&quot;
@@ -209,11 +192,8 @@ might not work in a 300d space (see: &lt;a href=&quot;http://citeseerx.ist.psu.e
 /static/5be84646d4a8cb7179c88cc63fc4b0fe/990db/cosine_sim.png 890w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Calculating cosine similarity (theory)&lt;/h1&gt;
 &lt;p&gt;This dot product formula contains the cosine of the angle between two vectors:&lt;/p&gt;
 &lt;p&gt;$\mathbf{a} \cdot \mathbf{b} = || \mathbf{a} ||_2 || \mathbf{b} ||_2 \cos \theta$&lt;/p&gt;
@@ -281,26 +261,24 @@ not calculating the &lt;code class=&quot;language-text&quot;&gt;zippedVectors&lt
 &lt;/a&gt; and wrote a little bit of glue code to make an API that takes
 an input word and lists similar words.  One important detail is I told babel not to transform my 75 megabyte model
 file.  Here it is in action (w/ hard to read json):&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/f7a528a169b4b4fb7d48f14d683ffcc7/c8b89/api_example.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 81.5217391304348%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACJUlEQVQ4y1VUSRLjIAz0PXF22+xbKv9/oqZbGGbmQAltjVALliM72dMmW9jEtSR7DLLv2Dsnx3HItu3yfDwgN/l8PvLA/v1+y/P5lM9p46L/9XrJ4p2XFJPEEKXkLMFDT1laq5BJQggqSylSa9WDKFtrsEfxiKdeoTN/cTQgOaAyOr0CJslweu/EA5AJMfZkAmaAj8NGPA8MwQMQAVSYEBmEACYQ0FoDezoPSP8dxnjmUpYznv6FhqHwROqtfTWICf/aubgvqFgPhF9bwuohgwKid1/eX0vuRkpWFM7r1tr7VyDpL+eVWb3aoWtPAbyYgFOyF+uNhAKQnLTZZI1MkmnK2+2m636/K8uUZJwMcz/0xSYnNlux0Ur8FsigvdNqsQg4RsMYo2A8jKPV5a4+xhlzyHJEJ65gYR495tCcczj6RaIIxERKJvc9Aaz28Th27bUCWlDtCIqVG4iA7rHYdF6dIExgorX2LyAq6oPfKyWBCmhw5SPusgckFfTOWTjtHBX273K5aP/WdZXr9Tp7yZ4NOyV9c2yU2cleVMlrkD36yeSYhD42IA/2PgV90bfU2ubMafAcUjcBI+xjJoff4fpswShA/VgLkRkYlYCoTzCez6q/gv5+w3mTUvIc8hGnYCyGbznnoht+EmM4OewMpP77/WZLdIjPZ5dTmp9Ef4pJH8BiQICPXnYDUnjNhMpqUCavaDa/pNF8JQP7MejretP99CP+D7mxocbl8gt1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;API Example&quot;
         title=&quot;&quot;
         src=&quot;/static/f7a528a169b4b4fb7d48f14d683ffcc7/b9e4f/api_example.png&quot;
@@ -312,11 +290,8 @@ file.  Here it is in action (w/ hard to read json):&lt;/p&gt;
 /static/f7a528a169b4b4fb7d48f14d683ffcc7/c8b89/api_example.png 1288w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://gist.github.com/mreishus/bfbb0a532f9ecdce536d80eb3e8897c1&quot;&gt;Gist of above&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The code for this is on github: &lt;a href=&quot;https://github.com/mreishus/vector-search-example/tree/03_added_vector_service&quot;&gt;Code&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;Up next&lt;/h1&gt;
@@ -394,26 +369,24 @@ puts &lt;span class=&quot;token string&quot;&gt;&quot;};&quot;&lt;/span&gt;&lt;/
 &lt;p&gt;Use it like so: &lt;code class=&quot;language-text&quot;&gt;$ ./make_model.rb 25000 &amp;gt; ../words25k.js&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;A 25k word model is about 75 megabytes, and includes a reasonable number of words.  Here’s a graph showing
 estimated vocabulary size for English native speakers from &lt;a href=&quot;http://testyourvocab.com/&quot;&gt;testyourvocab.com&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/81952aa53e57f10e3403a6457b690e14/3fc56/vocab1.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 57.74877650897226%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHci4LGB//EABcQAAMBAAAAAAAAAAAAAAAAAAEQEQD/2gAIAQEAAQUCKrg3/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACAx/9oACAEBAAY/AiL/AP/EABwQAAIBBQEAAAAAAAAAAAAAAAABERAhMUFhcf/aAAgBAQABPyFE9S/SICtzRHI//9oADAMBAAIAAwAAABBjD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQADAQADAAAAAAAAAAAAAAEAESFRMWFx/9oACAEBAAE/EEBXR0EFoFdtaiovfyJuZEoW+Z6E/9k=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Vocab graph&quot;
         title=&quot;&quot;
         src=&quot;/static/81952aa53e57f10e3403a6457b690e14/c739e/vocab1.jpg&quot;
@@ -423,11 +396,8 @@ estimated vocabulary size for English native speakers from &lt;a href=&quot;http
 /static/81952aa53e57f10e3403a6457b690e14/3fc56/vocab1.jpg 613w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Up next&lt;/h1&gt;
 &lt;p&gt;In part 3, we’ll be using some basic linear algebra to find related words.&lt;/p&gt;
 &lt;p&gt;Previous: &lt;a href=&quot;/word-vector/2017-07-19-word-vector-pt-1&quot;&gt;Part 1&lt;/a&gt; &lt;br /&gt;
@@ -452,26 +422,24 @@ that some intuitive concepts might be embedded in simple linear transformations.
 &lt;code class=&quot;language-text&quot;&gt;[0.5, 0.3, 0.6, 0, 0, 0, 0, 0....]&lt;/code&gt; to the vector for &lt;code class=&quot;language-text&quot;&gt;man&lt;/code&gt; ends up being the vector for &lt;code class=&quot;language-text&quot;&gt;woman&lt;/code&gt;, and adding it
 to &lt;code class=&quot;language-text&quot;&gt;king&lt;/code&gt; gets you &lt;code class=&quot;language-text&quot;&gt;queen&lt;/code&gt;.  This is simplifying a bit, the &lt;code class=&quot;language-text&quot;&gt;male-&amp;gt;female&lt;/code&gt; vector is not as clean as my example,
 but it’s still a very neat result.  Here’s a graphic from google showing some linear relationships:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/b1735761f02a7cb51e8835cf0a8d77d3/9910f/wordvec-linear-relationships.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 35.01661129568106%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA7ElEQVQY02VQbW/GIAjs//+PNlnzfJotKorga0fXpGk2QhDRuyO3nOc55zz/RWvtzwRD8Ei5dikjszDzolM9WEpr/f01Z0bnaikPe0RMxJ5qoAohOQdL68P75FGZGhPnnH+xI5NjsGNMzZtORIiy1MGlZy6ZaFHR/UAEjBAR4rziRDx2u11LgUUAbXrvzjkkUVkXxR4upbTUWhOlFAlACVChY4wY9YmtNSlAEbmVvXf28C4VzW97kCor+DHsbm68VmZ6dr7EW1Nz+jhbn1KKAi/DPp+PMUbrm2Lfd2PWEMLbxRjjtn2t62qt1esPdImWVI18LPIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Wordvec linear relationships&quot;
         title=&quot;&quot;
         src=&quot;/static/b1735761f02a7cb51e8835cf0a8d77d3/b9e4f/wordvec-linear-relationships.png&quot;
@@ -483,11 +451,8 @@ but it’s still a very neat result.  Here’s a graphic from google showing som
 /static/b1735761f02a7cb51e8835cf0a8d77d3/9910f/wordvec-linear-relationships.png 1505w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I’ve explored this feature some.  I’ve found it to be impressive but a bit messy and not as clean as the diagrams.
 I haven’t found any practical use for it. (Analogy completer?)&lt;/p&gt;
 &lt;h1&gt;Starting point: A simple app without any word vectors&lt;/h1&gt;
