@@ -1,5 +1,5 @@
 ---
-title: "Visually Classifying between 600 SNES games with 94% accuracy"
+title: "Visually Classifying between 600 SNES games with 95.8% accuracy"
 date: 2019-06-03T09:50:51-05:00
 templateKey: blog-post
 ---
@@ -16,7 +16,7 @@ games it belonged to**.  Would 600 categories be too much?  Would transfer
 learning from ImageNet work on game screenshots which don't even exist in the
 real world?
 
-It ended up working surprisingly well, with an accuracy of 94%.
+It ended up working surprisingly well, with an accuracy of 95.8%.
 
 - Technologies used: Python, pytorch, fast.ai, elixir, youtube-dl, ffmpeg, docker, starlette, react
 - [Online Demo](https://snes.matthewreishus.com/)
