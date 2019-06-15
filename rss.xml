@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 14 Jun 2019 23:13:17 GMT</lastBuildDate><item><title><![CDATA[Visually Classifying between 600 SNES games with 94% accuracy]]></title><description><![CDATA[In the online class Practical Deep Learning for Coders
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 15 Jun 2019 01:09:47 GMT</lastBuildDate><item><title><![CDATA[Visually Classifying between 600 SNES games with 95.8% accuracy]]></title><description><![CDATA[In the online class Practical Deep Learning for Coders
 2019, we learned how to create a
 world-class image classifer model for the Oxford…]]></description><link>https://matthewreishus.com//2019-06-03-snes-classifier/</link><guid isPermaLink="false">https://matthewreishus.com//2019-06-03-snes-classifier/</guid><pubDate>Mon, 03 Jun 2019 14:50:51 GMT</pubDate><content:encoded>&lt;p&gt;In the online class &lt;a href=&quot;https://www.fast.ai/2019/01/24/course-v3/&quot;&gt;Practical Deep Learning for Coders
 2019&lt;/a&gt;, we learned how to create a
@@ -10,7 +10,7 @@ examine a video game screenshot and determine which of ~600 Super Nintendo
 games it belonged to&lt;/strong&gt;.  Would 600 categories be too much?  Would transfer
 learning from ImageNet work on game screenshots which don’t even exist in the
 real world?&lt;/p&gt;
-&lt;p&gt;It ended up working surprisingly well, with an accuracy of 94%.&lt;/p&gt;
+&lt;p&gt;It ended up working surprisingly well, with an accuracy of 95.8%.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Technologies used: Python, pytorch, fast.ai, elixir, youtube-dl, ffmpeg, docker, starlette, react&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://snes.matthewreishus.com/&quot;&gt;Online Demo&lt;/a&gt;&lt;/li&gt;
