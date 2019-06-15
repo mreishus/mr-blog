@@ -1,5 +1,5 @@
 ---
-title: "Visually Classifying between 600 SNES games with 95.8% accuracy"
+title: "Visually Classifying between 485 SNES games with 95.8% accuracy"
 date: 2019-06-03T09:50:51-05:00
 templateKey: blog-post
 ---
@@ -11,8 +11,8 @@ Dataset](http://www.robots.ox.ac.uk/~vgg/data/pets/), which contains 37
 different categories of pets.
 
 I wondered if I could use the same techniques to create **a model that could
-examine a video game screenshot and determine which of ~600 Super Nintendo
-games it belonged to**.  Would 600 categories be too much?  Would transfer
+examine a video game screenshot and determine which of ~485 Super Nintendo
+games it belonged to**.  Would 485 categories be too much?  Would transfer
 learning from ImageNet work on game screenshots which don't even exist in the
 real world?
 
