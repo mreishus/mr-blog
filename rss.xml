@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 10 Aug 2019 00:00:49 GMT</lastBuildDate><item><title><![CDATA[ssh-keygen best practice]]></title><description><![CDATA[Just a quick note since I’m looking this up so often.  To create an SSH key
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>RSS for Node</generator><lastBuildDate>Fri, 16 Aug 2019 18:26:09 GMT</lastBuildDate><item><title><![CDATA[ssh-keygen best practice]]></title><description><![CDATA[Just a quick note since I’m looking this up so often.  To create an SSH key
 with the latest public key algorithm and some extra KDF rounds…]]></description><link>https://matthewreishus.com/2019-07-04-ssh-keygen/</link><guid isPermaLink="false">https://matthewreishus.com/2019-07-04-ssh-keygen/</guid><pubDate>Thu, 04 Jul 2019 14:50:51 GMT</pubDate><content:encoded>&lt;p&gt;Just a quick note since I’m looking this up so often.  To create an SSH key
 with the latest public key algorithm and some extra KDF rounds, use this
 command:&lt;/p&gt;
@@ -90,6 +90,7 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/9c734e667ddbace33010effe884b2985/b9e4f/search-1.png 590w,
 /static/9c734e667ddbace33010effe884b2985/c5f2c/search-1.png 846w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -118,6 +119,7 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/7a987dc55b8a2de520f6ba01ef47f00b/b9e4f/search-2.png 590w,
 /static/7a987dc55b8a2de520f6ba01ef47f00b/c2e96/search-2.png 855w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -146,6 +148,7 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/24a9ab35514651ce97bdf7d79c471e86/b9e4f/search-3.png 590w,
 /static/24a9ab35514651ce97bdf7d79c471e86/922ae/search-3.png 874w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -192,6 +195,7 @@ might not work in a 300d space (see: &lt;a href=&quot;http://citeseerx.ist.psu.e
 /static/5be84646d4a8cb7179c88cc63fc4b0fe/f9b6a/cosine_sim.png 885w,
 /static/5be84646d4a8cb7179c88cc63fc4b0fe/990db/cosine_sim.png 890w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -289,6 +293,7 @@ file.  Here it is in action (w/ hard to read json):&lt;/p&gt;
 /static/f7a528a169b4b4fb7d48f14d683ffcc7/2d849/api_example.png 1180w,
 /static/f7a528a169b4b4fb7d48f14d683ffcc7/c8b89/api_example.png 1288w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -394,6 +399,7 @@ estimated vocabulary size for English native speakers from &lt;a href=&quot;http
 /static/81952aa53e57f10e3403a6457b690e14/c739e/vocab1.jpg 590w,
 /static/81952aa53e57f10e3403a6457b690e14/3fc56/vocab1.jpg 613w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -448,6 +454,7 @@ but it’s still a very neat result.  Here’s a graphic from google showing som
 /static/b1735761f02a7cb51e8835cf0a8d77d3/2d849/wordvec-linear-relationships.png 1180w,
 /static/b1735761f02a7cb51e8835cf0a8d77d3/9910f/wordvec-linear-relationships.png 1505w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
