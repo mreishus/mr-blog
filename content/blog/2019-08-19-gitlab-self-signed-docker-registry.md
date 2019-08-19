@@ -223,3 +223,6 @@ As I was writing this post, I found
 *gitlab.yourdomain.com* pointing to a private address like *192.168.1.10*, this may
 be much easier than all of the workarounds described here.
 
+Update:  This does work, and is my recommended method.  Keeping this post up,
+but do read the next post.
+
