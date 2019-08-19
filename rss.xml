@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Aug 2019 17:45:29 GMT</lastBuildDate><item><title><![CDATA[self-hosted gitlab: adding a docker registry with a self-signed certificate]]></title><description><![CDATA[Problem Description You run a self-hosted instance of GitLab and wish
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Aug 2019 23:09:56 GMT</lastBuildDate><item><title><![CDATA[let's encrypt certificates for private network addresses (ex: 192.168.1.100)]]></title><description><![CDATA[Problem Description You have a host name that only exists on a private network. For example,
+“myserver.mydomain.com” resolves to an address…]]></description><link>https://matthewreishus.com/2019-08-19-lets-encrypt-private-network/</link><guid isPermaLink="false">https://matthewreishus.com/2019-08-19-lets-encrypt-private-network/</guid><pubDate>Tue, 20 Aug 2019 00:50:51 GMT</pubDate><content:encoded>&lt;h2&gt;Problem Description&lt;/h2&gt;
+&lt;p&gt;You have a host name that only exists on a private network. For example,
+&lt;em&gt;“myserver.mydomain.com”&lt;/em&gt; resolves to an address like &lt;em&gt;192.168.x.y&lt;/em&gt;,
+&lt;em&gt;172.16-31.b.c&lt;/em&gt;, or &lt;em&gt;10.a.b.c&lt;/em&gt;.  You’d like a free, signed, valid SSL
+certificate for this host, but you don’t plan on putting this host on the
+internet.  How do you get a &lt;strong&gt;let’s encrypt&lt;/strong&gt; certificate for it?&lt;/p&gt;
+&lt;h2&gt;Answer&lt;/h2&gt;
+&lt;p&gt;It’s possible using DNS challenges.  I found &lt;a href=&quot;https://community.letsencrypt.org/t/certificates-for-hosts-on-private-networks/174/35&quot;&gt;instructions for making let’s
+encrypt certificates for private
+domains&lt;/a&gt;.
+Since this is posted in a forum thread, I’m reposting the information just in
+case something happens to it.  All credit goes to &lt;a href=&quot;https://community.letsencrypt.org/u/bryanlarsen&quot;&gt;Bryan Larsen on the Let’s
+Encrypt Forums&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Requirements: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a domain name (example.com)&lt;/li&gt;
+&lt;li&gt;access to the DNS server for example.com&lt;/li&gt;
+&lt;li&gt;root access on a publicly accessible server (server.example.com). &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And let’s assume you want to create a certificate for 192.168.7.7 named foo.example.com&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;install &lt;code class=&quot;language-text&quot;&gt;certsling&lt;/code&gt; on the server.&lt;/li&gt;
+&lt;li&gt;Add an A record to point foo(.example.com) to 192.168.7.7&lt;/li&gt;
+&lt;li&gt;Add an NS record to point _acme-challenge.foo(.example.com) to server.example.com&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;sudo socat -T15 udp4-recvfrom:53,reuseaddr,fork tcp:localhost:8053&lt;/code&gt; on your server&lt;/li&gt;
+&lt;li&gt;open port 53 on your server firewall&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;mkdir myemail@example.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;cd myemail@example.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;certsling -s --dns foo.example.com&lt;/code&gt; to get certs from the letsencrypt staging server&lt;/li&gt;
+&lt;li&gt;When the previous step works, &lt;code class=&quot;language-text&quot;&gt;rm -rf *&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;certsling --dns foo.example.com&lt;/code&gt; to get real certs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Your certs will be in “myemail@example.com/foo.example.com/“!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This worked perfectly for me.  I was able to copy the -chained.crt and the .key
+file to my gitlab server, to have a local-only docker container registry using
+SSL without any workarounds.  The only downside being that, it’s a manual
+process I will have to repeat every 3 months.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[self-hosted gitlab: adding a docker registry with a self-signed certificate]]></title><description><![CDATA[Problem Description You run a self-hosted instance of GitLab and wish
 to add private docker container registry (storage and distribution for…]]></description><link>https://matthewreishus.com/2019-08-19-gitlab-self-signed-docker-registry/</link><guid isPermaLink="false">https://matthewreishus.com/2019-08-19-gitlab-self-signed-docker-registry/</guid><pubDate>Mon, 19 Aug 2019 14:50:51 GMT</pubDate><content:encoded>&lt;h2&gt;Problem Description&lt;/h2&gt;
 &lt;p&gt;You run a self-hosted instance of &lt;a href=&quot;https://about.gitlab.com/&quot;&gt;GitLab&lt;/a&gt; and wish
 to add private docker container registry (storage and distribution for docker
@@ -169,7 +208,9 @@ projects&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;As I was writing this post, I found
 &lt;a href=&quot;https://community.letsencrypt.org/t/certificates-for-hosts-on-private-networks/174/35&quot;&gt;instructions for making let’s encrypt certificates for private domains&lt;/a&gt;.  If it’s possible to make a valid certificate for
 &lt;em&gt;gitlab.yourdomain.com&lt;/em&gt; pointing to a private address like &lt;em&gt;192.168.1.10&lt;/em&gt;, this may
-be much easier than all of the workarounds described here.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ssh-keygen best practice]]></title><description><![CDATA[Just a quick note since I’m looking this up so often.  To create an SSH key
+be much easier than all of the workarounds described here.&lt;/p&gt;
+&lt;p&gt;Update:  This does work, and is my recommended method.  Keeping this post up,
+but do read the next post.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ssh-keygen best practice]]></title><description><![CDATA[Just a quick note since I’m looking this up so often.  To create an SSH key
 with the latest public key algorithm and some extra KDF rounds…]]></description><link>https://matthewreishus.com/2019-07-04-ssh-keygen/</link><guid isPermaLink="false">https://matthewreishus.com/2019-07-04-ssh-keygen/</guid><pubDate>Thu, 04 Jul 2019 14:50:51 GMT</pubDate><content:encoded>&lt;p&gt;Just a quick note since I’m looking this up so often.  To create an SSH key
 with the latest public key algorithm and some extra KDF rounds, use this
 command:&lt;/p&gt;
