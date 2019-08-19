@@ -1,4 +1,175 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>RSS for Node</generator><lastBuildDate>Fri, 16 Aug 2019 18:26:09 GMT</lastBuildDate><item><title><![CDATA[ssh-keygen best practice]]></title><description><![CDATA[Just a quick note since I’m looking this up so often.  To create an SSH key
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Aug 2019 17:45:29 GMT</lastBuildDate><item><title><![CDATA[self-hosted gitlab: adding a docker registry with a self-signed certificate]]></title><description><![CDATA[Problem Description You run a self-hosted instance of GitLab and wish
+to add private docker container registry (storage and distribution for…]]></description><link>https://matthewreishus.com/2019-08-19-gitlab-self-signed-docker-registry/</link><guid isPermaLink="false">https://matthewreishus.com/2019-08-19-gitlab-self-signed-docker-registry/</guid><pubDate>Mon, 19 Aug 2019 14:50:51 GMT</pubDate><content:encoded>&lt;h2&gt;Problem Description&lt;/h2&gt;
+&lt;p&gt;You run a self-hosted instance of &lt;a href=&quot;https://about.gitlab.com/&quot;&gt;GitLab&lt;/a&gt; and wish
+to add private docker container registry (storage and distribution for docker
+images inside gitlab). Your gitlab server is on a private network, so it does
+not have a valid SSL certificate, but the container registry uses SSL.&lt;/p&gt;
+&lt;h2&gt;Ensure you are not using zeroconf/avahi/mDNS.&lt;/h2&gt;
+&lt;p&gt;My gitlab machine’s address was &lt;code class=&quot;language-text&quot;&gt;gitlab.local&lt;/code&gt;, powered by &lt;em&gt;avahi-daemon&lt;/em&gt;. This
+isn’t advised, especially if you plan to generate docker images for your
+project, which will probably use GitLab’s &lt;a href=&quot;https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-executor&quot;&gt;docker-in-docker
+workflow&lt;/a&gt;.
+These addresses often need to be looked up inside docker images, and that’s not
+easy with avahi.&lt;/p&gt;
+&lt;p&gt;Add a dns record for the machine on your router or dns server that does not use
+the &lt;code class=&quot;language-text&quot;&gt;.local&lt;/code&gt; domain.  In my case, I added a dns entry for &lt;code class=&quot;language-text&quot;&gt;gitlab.local.p&lt;/code&gt;, but
+you may use anything.&lt;/p&gt;
+&lt;h2&gt;Create a self-signed SSL certificate&lt;/h2&gt;
+&lt;p&gt;Use this command to create two files: &lt;code class=&quot;language-text&quot;&gt;openssl req -new -newkey rsa:4096 -x509
+-sha256 -days 365 -nodes -out gitlab.local.p.crt -keyout gitlab.local.p.key&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It asks some questions.  Here is my example output with my answers.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;root@gitlab /r/certs # openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out gitlab.local.p.crt -keyout gitlab.local.p.key
+Generating a RSA private key
+.......................................................++++
+..............................................................................................................++++
+writing new private key to &amp;#39;gitlab.local.p.key&amp;#39;
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter &amp;#39;.&amp;#39;, the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:TX
+Locality Name (eg, city) []:Dallas
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Homelab
+Organizational Unit Name (eg, section) []:Gitlab
+Common Name (e.g. server FQDN or YOUR name) []:gitlab.local.p
+Email Address []:admin@example.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;Copy the cert into Gitlab’s Config directory&lt;/h2&gt;
+&lt;p&gt;I use a docker mounted gitlab omnibus instance, so my gitlab config files are
+in &lt;code class=&quot;language-text&quot;&gt;/srv/gitlab/config&lt;/code&gt;.  Copy both the &lt;code class=&quot;language-text&quot;&gt;gitlab.local.p.crt&lt;/code&gt; and
+&lt;code class=&quot;language-text&quot;&gt;gitlab.local.p.key&lt;/code&gt; files into the &lt;code class=&quot;language-text&quot;&gt;/srv/gitlab/config/ssl/&lt;/code&gt; directory,
+creating it if needed.&lt;/p&gt;
+&lt;h2&gt;Configure GitLab&lt;/h2&gt;
+&lt;p&gt;Now, let’s turn on the registry inside gitlab and have it use our self-signed
+files.  Edit your &lt;code class=&quot;language-text&quot;&gt;/srv/gitlab/config/gitlab.rb&lt;/code&gt; file.  Here are the lines I
+set:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;registry_external_url &amp;#39;https://gitlab.local.p:4567&amp;#39;
+
+nginx[&amp;#39;ssl_certificate&amp;#39;] = &amp;quot;/etc/gitlab/ssl/gitlab.local.p.crt&amp;quot;
+nginx[&amp;#39;ssl_certificate_key&amp;#39;] = &amp;quot;/etc/gitlab/ssl/gitlab.local.p.key&amp;quot;
+registry_nginx[&amp;#39;ssl_certificate&amp;#39;] = &amp;quot;/etc/gitlab/ssl/gitlab.local.p.crt&amp;quot;
+registry_nginx[&amp;#39;ssl_certificate_key&amp;#39;] = &amp;quot;/etc/gitlab/ssl/gitlab.local.p.key&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since I’m running the registry on port 4567, I needed my gitlab docker service
+to publish that port.  I edited my &lt;code class=&quot;language-text&quot;&gt;/etc/systemd/system/docker-gitlab.service&lt;/code&gt;
+file and added &lt;code class=&quot;language-text&quot;&gt;--publish 4567:4567&lt;/code&gt; to the command line.&lt;/p&gt;
+&lt;p&gt;Reconfigure/restart gitlab.&lt;/p&gt;
+&lt;h2&gt;Distribute copies of the cert to other machines&lt;/h2&gt;
+&lt;p&gt;If we want other computers on our local network to be able to access the docker
+registry, they need to have a copy of the cert file in a specific location.
+Otherwise, docker will throw an error when connecting to the registry.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;gitlab.local.p.crt&lt;/code&gt; needs to be placed in the directory+location
+&lt;code class=&quot;language-text&quot;&gt;/etc/docker/certs.d/gitlab.local.p:4567/ca.crt&lt;/code&gt; on any computer that will access
+this registry.&lt;/p&gt;
+&lt;p&gt;I added some ansible code to my docker role to make this easier:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Creates /etc/docker/certs.d/gitlab.local.p&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;4567 directory
+  &lt;span class=&quot;token key atrule&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; /etc/docker/certs.d/gitlab.local.p&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4567&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; directory
+    &lt;span class=&quot;token key atrule&quot;&gt;owner&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+    &lt;span class=&quot;token key atrule&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+    &lt;span class=&quot;token key atrule&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0775&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;recurse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; yes
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; copy ca.crt
+  &lt;span class=&quot;token key atrule&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ca.crt
+    &lt;span class=&quot;token key atrule&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; /etc/docker/certs.d/gitlab.local.p&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;4567/ca.crt
+    &lt;span class=&quot;token key atrule&quot;&gt;owner&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+    &lt;span class=&quot;token key atrule&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+    &lt;span class=&quot;token key atrule&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0644&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;Configure GitLab-Runner&lt;/h2&gt;
+&lt;p&gt;Our workflow will use a &lt;em&gt;gitlab-runner&lt;/em&gt; using the &lt;em&gt;docker&lt;/em&gt; executor to create
+docker images.  This is the &lt;a href=&quot;https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-executor&quot;&gt;docker-in-docker
+workflow&lt;/a&gt;.
+There’s a few settings that need to be set in the &lt;code class=&quot;language-text&quot;&gt;config.toml&lt;/code&gt; file for the
+gitlab runner.&lt;/p&gt;
+&lt;p&gt;Here’s the &lt;em&gt;runners.docker&lt;/em&gt; section of my &lt;code class=&quot;language-text&quot;&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  [runners.docker]
+    tls_verify = false
+    image = &amp;quot;alpine:latest&amp;quot;
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = [&amp;quot;/cache&amp;quot;, &amp;quot;/certs/client&amp;quot;]
+    shm_size = 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I had to &lt;strong&gt;set privileged to true&lt;/strong&gt; and &lt;strong&gt;add &lt;code class=&quot;language-text&quot;&gt;/certs/client&lt;/code&gt; to volumes&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Modify the default docker .gitlab-ci.yml&lt;/h2&gt;
+&lt;p&gt;Our sample gitlab project is anything with a &lt;code class=&quot;language-text&quot;&gt;Dockerfile&lt;/code&gt; that can create an
+image using &lt;code class=&quot;language-text&quot;&gt;docker build&lt;/code&gt;.  Ideally, you can use the templated version often
+&lt;code class=&quot;language-text&quot;&gt;.gitlab-ci.yml&lt;/code&gt; for docker that gitlab provides when clicking the “Set up
+CI/CD button”.  However, that will error out with an unknown authority message
+in this case.&lt;/p&gt;
+&lt;p&gt;The error is because we’re launching a new docker image, then trying to connect
+to the repository while inside that image.  But the new image doesn’t have a
+copy of the self-signed certificate to know that it’s valid.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gitlab.com/gitlab-org/gitlab-runner/issues/1350&quot;&gt;Here’s a long thread on gitlab.com discussing possible
+solutions&lt;/a&gt;.  The
+solution that worked for me was:  Serving a copy of the certificate file on a
+local HTTP server, then configuring the &lt;code class=&quot;language-text&quot;&gt;.gitlab-ci.yml&lt;/code&gt; file to download that
+file early in the process.  It’s dirty, but it works.&lt;/p&gt;
+&lt;p&gt;For an http server, I used the built in &lt;em&gt;snippets&lt;/em&gt; function inside gitlab,
+uploaded the certificate file, and set it to be accessible without
+authentication.  This isn’t the most secure, but it is on my internal network
+only.  &lt;/p&gt;
+&lt;p&gt;Here is a modified copy of &lt;code class=&quot;language-text&quot;&gt;.gitlab-ci.yml&lt;/code&gt; that works for me:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# This file is a template, and might need editing before it works on your project.&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;build-master&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;# Official docker image.&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;latest
+  &lt;span class=&quot;token key atrule&quot;&gt;stage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; build
+  &lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;dind
+      &lt;span class=&quot;token key atrule&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /bin/sh
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;c
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; wget http&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//gitlab.local.p/snippets/1/raw &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;O /usr/local/share/ca&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;certificates/ca.crt &amp;amp;&amp;amp; update&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;ca&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;certificates &amp;amp;&amp;amp; dockerd&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;entrypoint.sh &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt; exit
+  &lt;span class=&quot;token key atrule&quot;&gt;before_script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker login &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;u &quot;$CI_REGISTRY_USER&quot; &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p &quot;$CI_REGISTRY_PASSWORD&quot; $CI_REGISTRY
+  &lt;span class=&quot;token key atrule&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker build &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;pull &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;t &quot;$CI_REGISTRY_IMAGE&quot; .
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker push &quot;$CI_REGISTRY_IMAGE&quot;
+  &lt;span class=&quot;token key atrule&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; master
+
+&lt;span class=&quot;token key atrule&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;# Official docker image.&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;latest
+  &lt;span class=&quot;token key atrule&quot;&gt;stage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; build
+  &lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;dind
+  &lt;span class=&quot;token key atrule&quot;&gt;before_script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker login &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;u &quot;$CI_REGISTRY_USER&quot; &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p &quot;$CI_REGISTRY_PASSWORD&quot; $CI_REGISTRY
+  &lt;span class=&quot;token key atrule&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker build &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;pull &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;t &quot;$CI_REGISTRY_IMAGE&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;$CI_COMMIT_REF_SLUG&quot; .
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; docker push &quot;$CI_REGISTRY_IMAGE&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;$CI_COMMIT_REF_SLUG&quot;
+  &lt;span class=&quot;token key atrule&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the thread, @debuglevel posted a more fleshed out &lt;code class=&quot;language-text&quot;&gt;.gitlab-ci.yml&lt;/code&gt; with a
+similiar workaround:
+&lt;a href=&quot;https://gist.github.com/mreishus/bc35b3b241a9f9fdf4a021aeaabfcc5a&quot;&gt;gitlab-ci.yml&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are other solutions posted in the thread worth trying.  Some solutions
+used a &lt;code class=&quot;language-text&quot;&gt;CI_SERVER_TLS_CA_FILE&lt;/code&gt; variable, which I could not get to work.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.docker.com/registry/insecure/#deploying-a-plain-http-registry&quot;&gt;Docker: Use self-signed
+certificates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gitlab.com/gitlab-org/gitlab-runner/issues/1350&quot;&gt;Gitlab.com issue thread&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/administration/container_registry.html#configure-container-registry-under-an-existing-gitlab-domain&quot;&gt;GitLab Container Registry
+admin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/user/project/container_registry.html&quot;&gt;GitLab Container Registry for
+projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;An Easier Way?&lt;/h2&gt;
+&lt;p&gt;As I was writing this post, I found
+&lt;a href=&quot;https://community.letsencrypt.org/t/certificates-for-hosts-on-private-networks/174/35&quot;&gt;instructions for making let’s encrypt certificates for private domains&lt;/a&gt;.  If it’s possible to make a valid certificate for
+&lt;em&gt;gitlab.yourdomain.com&lt;/em&gt; pointing to a private address like &lt;em&gt;192.168.1.10&lt;/em&gt;, this may
+be much easier than all of the workarounds described here.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ssh-keygen best practice]]></title><description><![CDATA[Just a quick note since I’m looking this up so often.  To create an SSH key
 with the latest public key algorithm and some extra KDF rounds…]]></description><link>https://matthewreishus.com/2019-07-04-ssh-keygen/</link><guid isPermaLink="false">https://matthewreishus.com/2019-07-04-ssh-keygen/</guid><pubDate>Thu, 04 Jul 2019 14:50:51 GMT</pubDate><content:encoded>&lt;p&gt;Just a quick note since I’m looking this up so often.  To create an SSH key
 with the latest public key algorithm and some extra KDF rounds, use this
 command:&lt;/p&gt;
