@@ -36,17 +36,17 @@ self.__precacheManifest = [
     "url": "styles-476942609fbc6a960513.js"
   },
   {
-    "url": "commons-1982f251bf94c8c69e33.js"
+    "url": "commons-08617c456cc5b464e52a.js"
   },
   {
-    "url": "app-d4d7bbe6840a294fb0c4.js"
+    "url": "app-7713ead14b547e09441d.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-568c113b24a9e8ed8db8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "5f1875b98b4d137968d0bf2f0c023c4c"
+    "revision": "85bdad17be2f86b27c53ffea22e01442"
   },
   {
     "url": "manifest.webmanifest",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, new workbox.strategies.NetworkFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
@@ -143,7 +143,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-d4d7bbe6840a294fb0c4.js`))) {
+  if (!resources || !(await caches.match(`/app-7713ead14b547e09441d.js`))) {
     return await fetch(event.request)
   }
 
