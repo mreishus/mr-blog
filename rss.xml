@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 Dec 2019 16:26:19 GMT</lastBuildDate><item><title><![CDATA[Advent Of Code 2019]]></title><description><![CDATA[I’m participating in the Advent of Code this
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Dec 2019 20:28:58 GMT</lastBuildDate><item><title><![CDATA[Advent Of Code 2019]]></title><description><![CDATA[I’m participating in the Advent of Code this
 year! It’s a programming challenge released each day for the first 25 days of
 december. In 201…]]></description><link>https://matthewreishus.com/2019-12-04-advent-of-code/</link><guid isPermaLink="false">https://matthewreishus.com/2019-12-04-advent-of-code/</guid><pubDate>Thu, 05 Dec 2019 00:50:51 GMT</pubDate><content:encoded>&lt;p&gt;I’m participating in the &lt;a href=&quot;https://adventofcode.com/&quot;&gt;Advent of Code&lt;/a&gt; this
 year! It’s a programming challenge released each day for the first 25 days of
@@ -155,7 +155,7 @@ Encrypt Forums&lt;/a&gt;.&lt;/p&gt;
 &lt;li&gt;install &lt;code class=&quot;language-text&quot;&gt;certsling&lt;/code&gt; on the server.&lt;/li&gt;
 &lt;li&gt;Add an A record to point foo(.example.com) to 192.168.7.7&lt;/li&gt;
 &lt;li&gt;Add an NS record to point _acme-challenge.foo(.example.com) to server.example.com&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;sudo socat -T15 udp4-recvfrom:53,reuseaddr,fork tcp:localhost:8053&lt;/code&gt; on your server&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;sudo socat -T15 udp4-recvfrom:53undefinedreuseaddrundefinedfork tcp:localhost:8053&lt;/code&gt; on your server&lt;/li&gt;
 &lt;li&gt;open port 53 on your server firewall&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;mkdir myemail@example.com&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;cd myemail@example.com&lt;/code&gt;&lt;/li&gt;
@@ -198,14 +198,14 @@ You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter &amp;#39;.&amp;#39;, the field will be left blank.
+For some fields there will be a default valueundefined
+If you enter &amp;#39;.&amp;#39;undefined the field will be left blank.
 -----
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:TX
-Locality Name (eg, city) []:Dallas
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Homelab
-Organizational Unit Name (eg, section) []:Gitlab
+Locality Name (egundefined city) []:Dallas
+Organization Name (egundefined company) [Internet Widgits Pty Ltd]:Homelab
+Organizational Unit Name (egundefined section) []:Gitlab
 Common Name (e.g. server FQDN or YOUR name) []:gitlab.local.p
 Email Address []:admin@example.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt; &lt;/p&gt;
@@ -266,7 +266,7 @@ gitlab runner.&lt;/p&gt;
     disable_entrypoint_overwrite = false
     oom_kill_disable = false
     disable_cache = false
-    volumes = [&amp;quot;/cache&amp;quot;, &amp;quot;/certs/client&amp;quot;]
+    volumes = [&amp;quot;/cache&amp;quot;undefined &amp;quot;/certs/client&amp;quot;]
     shm_size = 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I had to &lt;strong&gt;set privileged to true&lt;/strong&gt; and &lt;strong&gt;add &lt;code class=&quot;language-text&quot;&gt;/certs/client&lt;/code&gt; to volumes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2&gt;Modify the default docker .gitlab-ci.yml&lt;/h2&gt;
@@ -433,6 +433,7 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/9c734e667ddbace33010effe884b2985/799d3/search-1.png 590w,
 /static/9c734e667ddbace33010effe884b2985/7a2f6/search-1.png 846w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -462,6 +463,7 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/7a987dc55b8a2de520f6ba01ef47f00b/799d3/search-2.png 590w,
 /static/7a987dc55b8a2de520f6ba01ef47f00b/4c809/search-2.png 855w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -491,6 +493,7 @@ screenshots of the related search in action:&lt;/p&gt;
 /static/24a9ab35514651ce97bdf7d79c471e86/799d3/search-3.png 590w,
 /static/24a9ab35514651ce97bdf7d79c471e86/46592/search-3.png 874w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -538,6 +541,7 @@ might not work in a 300d space (see: &lt;a href=&quot;http://citeseerx.ist.psu.e
 /static/5be84646d4a8cb7179c88cc63fc4b0fe/2a3d6/cosine_sim.png 885w,
 /static/5be84646d4a8cb7179c88cc63fc4b0fe/52edb/cosine_sim.png 890w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -636,6 +640,7 @@ file.  Here it is in action (w/ hard to read json):&lt;/p&gt;
 /static/f7a528a169b4b4fb7d48f14d683ffcc7/ae92f/api_example.png 1180w,
 /static/f7a528a169b4b4fb7d48f14d683ffcc7/de760/api_example.png 1288w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -742,6 +747,7 @@ estimated vocabulary size for English native speakers from &lt;a href=&quot;http
 /static/81952aa53e57f10e3403a6457b690e14/88218/vocab1.jpg 590w,
 /static/81952aa53e57f10e3403a6457b690e14/dff69/vocab1.jpg 613w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -765,9 +771,9 @@ pre-trained model and use it in our application: &lt;a href=&quot;https://code.g
 You can find many other pretrained models, some generated with different techniques online;
 however, I’ve had excellent results using this one.&lt;/p&gt;
 &lt;p&gt;Each word is encoded as a vector in 300 dimensions.  For example, the word &lt;code class=&quot;language-text&quot;&gt;chair&lt;/code&gt; is represented by this array:
-&lt;code class=&quot;language-text&quot;&gt;[0.118652, -0.375000, 0.161133, 0.002151, ...295 numbers omitted.. , 0.171875]&lt;/code&gt;.  One interesting feature is
+&lt;code class=&quot;language-text&quot;&gt;[0.118652undefined -0.375000undefined 0.161133undefined 0.002151undefined ...295 numbers omitted.. undefined 0.171875]&lt;/code&gt;.  One interesting feature is
 that some intuitive concepts might be embedded in simple linear transformations.  For example, perhaps adding
-&lt;code class=&quot;language-text&quot;&gt;[0.5, 0.3, 0.6, 0, 0, 0, 0, 0....]&lt;/code&gt; to the vector for &lt;code class=&quot;language-text&quot;&gt;man&lt;/code&gt; ends up being the vector for &lt;code class=&quot;language-text&quot;&gt;woman&lt;/code&gt;, and adding it
+&lt;code class=&quot;language-text&quot;&gt;[0.5undefined 0.3undefined 0.6undefined 0undefined 0undefined 0undefined 0undefined 0....]&lt;/code&gt; to the vector for &lt;code class=&quot;language-text&quot;&gt;man&lt;/code&gt; ends up being the vector for &lt;code class=&quot;language-text&quot;&gt;woman&lt;/code&gt;, and adding it
 to &lt;code class=&quot;language-text&quot;&gt;king&lt;/code&gt; gets you &lt;code class=&quot;language-text&quot;&gt;queen&lt;/code&gt;.  This is simplifying a bit, the &lt;code class=&quot;language-text&quot;&gt;male-&amp;gt;female&lt;/code&gt; vector is not as clean as my example,
 but it’s still a very neat result.  Here’s a graphic from google showing some linear relationships:&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -797,6 +803,7 @@ but it’s still a very neat result.  Here’s a graphic from google showing som
 /static/b1735761f02a7cb51e8835cf0a8d77d3/ae92f/wordvec-linear-relationships.png 1180w,
 /static/b1735761f02a7cb51e8835cf0a8d77d3/0521b/wordvec-linear-relationships.png 1505w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
