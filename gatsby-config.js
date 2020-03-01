@@ -2,7 +2,10 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: `MatthewReishus.com`,
-    author: `Matthew Reishus`,
+    author: {
+      name: `Matthew Reishus`,
+      summary: ``,
+    },
     description: `Personal blog site.`,
     siteUrl: `https://matthewreishus.com/`,
     social: {
