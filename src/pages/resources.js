@@ -151,6 +151,19 @@ class Resources extends React.Component {
             high-quality online courses.
           </li>
         </ul>
+        <h2>Conference Talks</h2>
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=M6JGdF9XC7g">
+              Gene Kim - The Unicorn Project And The Five Ideals
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=JvBT4XBdoUE">
+              Saša Jurić - The Soul of Erlang and Elixir
+            </a>
+          </li>
+        </ul>
       </Layout>
     )
   }
