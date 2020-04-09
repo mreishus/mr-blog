@@ -10,8 +10,16 @@ class Resources extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <h1>Resources</h1>
-        Some of my favorite software development resources.
-        <h2 style={{ marginTop: "20px" }}>Books</h2>
+        Some of my favorite software development resources. These are meant to
+        be the best of the best and widely applicable. For books and libraries
+        relating to specific technologies, check{" "}
+        <a href="https://github.com/mreishus/notebook-pub">
+          my public notebook
+        </a>
+        .
+        <h2 style={{ marginTop: "20px" }}>
+          Books <small>(No affiliate links)</small>
+        </h2>
         <div style={{ marginTop: "20px" }}></div>
         <h3>General</h3>
         <ul>
@@ -134,6 +142,13 @@ class Resources extends React.Component {
           </li>
           <li>
             <a href="https://leetcode.com/">Leetcode</a>
+          </li>
+        </ul>
+        <h2 style={{ marginTop: "20px" }}>Intro to Deep Learning</h2>
+        <ul>
+          <li>
+            <a href="https://www.fast.ai/">fast.ai</a> has several free,
+            high-quality online courses.
           </li>
         </ul>
       </Layout>
