@@ -96,6 +96,17 @@ class Projects extends React.Component {
             Solutions on Github with writeups for most problems.
           </a>
         </p>
+        <h2>
+          <a href="https://github.com/mreishus/slowcat">slowcat</a>
+        </h2>
+        <p>
+          <pre style={{ display: "inline" }}>slowcat</pre> is like{" "}
+          <pre style={{ display: "inline" }}>cat</pre>, but it's slow. It prints
+          text to the console with a small delay between each character,
+          producing a visual effect reminiscent of text sent over old modems or
+          teletypes.
+        </p>
+        <p>It's a half-joke project made just to get familiar with golang.</p>
         <h1>Professional Projects</h1>
         <p>
           Projects I've contributed to, in a team context, at full-time jobs.
@@ -107,6 +118,13 @@ class Projects extends React.Component {
           <a href="https://omniactivation.experian.com/">Audience Engine</a>
           <br />
           Data Engine
+        </p>
+        <p>
+          I made many contributions to Audience Engine, but notable is a object
+          diagramming library created in React. Items can be placed on an
+          scrollable, zoomable infinite canvas and connected with curved, SVG
+          arrows. Feature automatic arrangement, a mini-map, and stellar
+          rendering performance.
         </p>
         <h2>Allied Health Media</h2>
         <p>
