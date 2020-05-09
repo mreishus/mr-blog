@@ -5840,7 +5840,7 @@ gatsby-page-utils@^0.2.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-catch-links@^2.1.21:
+gatsby-plugin-catch-links@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.1.tgz#1450501b0cf88b045abde92ae30f74bf66cdf1ca"
   integrity sha512-0hqe9mmJGPF+mh2Rrat1RhBBfm/rNi4nCEnsNSQ/j7h2w5btOny80B7He9JIqLTspcQhXuo709nGdOUqx+Qmyw==
@@ -6405,7 +6405,7 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-gh-pages@^2.1.1:
+gh-pages@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-2.2.0.tgz#74ebeaca8d2b9a11279dcbd4a39ddfff3e6caa24"
   integrity sha512-c+yPkNOPMFGNisYg9r4qvsMIjVYikJv7ImFOhPIVPt0+AcRUamZ7zkGRLHz7FKB0xrlZ+ddSOJsZv9XAFVXLmA==
