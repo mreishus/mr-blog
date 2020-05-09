@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Apr 2020 19:10:40 GMT</lastBuildDate><item><title><![CDATA[About Matthew Reishus]]></title><description><![CDATA[Lead web application developer with over 10 years of professional experience.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MatthewReishus.com]]></title><description><![CDATA[Personal blog site.]]></description><link>https://matthewreishus.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 09 May 2020 19:26:45 GMT</lastBuildDate><item><title><![CDATA[About Matthew Reishus]]></title><description><![CDATA[Lead web application developer with over 10 years of professional experience.
 Adept in front-end, back-end, and devops tracks. Specialties…]]></description><link>https://matthewreishus.com/about/</link><guid isPermaLink="false">https://matthewreishus.com/about/</guid><pubDate>Sun, 15 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Lead web application developer with over 10 years of professional experience.
 Adept in front-end, back-end, and devops tracks. Specialties are development
 process improvement, debugging complex problems, and creating tools to aid
@@ -425,7 +425,7 @@ example made for this blog series. &lt;/p&gt;
 screenshots of the related search in action:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -455,7 +455,7 @@ screenshots of the related search in action:&lt;/p&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -485,7 +485,7 @@ screenshots of the related search in action:&lt;/p&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -532,7 +532,7 @@ might not work in a 300d space (see: &lt;a href=&quot;http://citeseerx.ist.psu.e
 &lt;p&gt;Instead, we can use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cosine_similarity&quot;&gt;cosine similarity&lt;/a&gt;, which will tell us if vectors are roughly pointing in the same direction or not:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -630,7 +630,7 @@ an input word and lists similar words.  One important detail is I told babel not
 file.  Here it is in action (w/ hard to read json):&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -739,7 +739,7 @@ puts &lt;span class=&quot;token string&quot;&gt;&quot;};&quot;&lt;/span&gt;&lt;/
 estimated vocabulary size for English native speakers from &lt;a href=&quot;http://testyourvocab.com/&quot;&gt;testyourvocab.com&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -793,7 +793,7 @@ to &lt;code class=&quot;language-text&quot;&gt;king&lt;/code&gt; gets you &lt;co
 but it’s still a very neat result.  Here’s a graphic from google showing some linear relationships:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
