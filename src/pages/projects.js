@@ -11,6 +11,18 @@ class Projects extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <h1>Personal Projects</h1>
         <p>These are small projects I've made by myself.</p>
+        <div
+          style={{
+            padding: "0.5rem",
+            backgroundColor: "#bee3f8",
+            marginTop: "1rem",
+            marginBottom: "1rem",
+            border: "1px solid black",
+          }}
+        >
+          Note: All sites are currently down while I wait for replacement parts
+          for my home server. 6/4/2020
+        </div>
         <h2>
           <a href="https://sbin.top/">Sbin</a>
         </h2>
